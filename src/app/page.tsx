@@ -13,6 +13,8 @@ import OurStory from '@/components/sections/our-story';
 import ClosingCta from '@/components/sections/closing-cta';
 import Footer from '@/components/sections/footer';
 import Brands from '@/components/sections/brands';
+import Team from '@/components/sections/team';
+import DealScanner from '@/components/interactive/deal-scanner';
 
 function AnimatedSection({ children }: { children: React.ReactNode }) {
   const ref = useRef(null);
@@ -21,7 +23,7 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
     offset: ['start end', 'end center'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.3, 0.7], [0.4, 1]);
 
   return (
     <motion.div ref={ref} style={{ opacity }}>
@@ -35,51 +37,31 @@ export default function Home() {
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section>
-          <Hero />
-        </section>
-        <section>
-          <Brands />
-        </section>
+        <Hero />
+        <Brands />
         <AnimatedSection>
-          <section>
-            <HowItWorks />
-          </section>
+          <HowItWorks />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <Benefits />
-          </section>
+          <Benefits />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <MarketProof />
-          </section>
+          <MarketProof />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <Features />
-          </section>
+          <Features />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <Testimonials />
-          </section>
+          <Testimonials />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <BusinessModel />
-          </section>
+          <BusinessModel />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <OurStory />
-          </section>
+          <OurStory />
         </AnimatedSection>
         <AnimatedSection>
-          <section>
-            <ClosingCta />
-          </section>
+          <ClosingCta />
         </AnimatedSection>
       </main>
       <Footer />
