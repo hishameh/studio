@@ -35,16 +35,52 @@ export default function Home() {
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Brands />
-        <HowItWorks />
-        <Benefits />
-        <MarketProof />
-        <Features />
-        <Testimonials />
-        <BusinessModel />
-        <OurStory />
-        <ClosingCta />
+        <section>
+          <Hero />
+        </section>
+        <section>
+          <Brands />
+        </section>
+        <AnimatedSection>
+          <section>
+            <HowItWorks />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <Benefits />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <MarketProof />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <Features />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <Testimonials />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <BusinessModel />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <OurStory />
+          </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <section>
+            <ClosingCta />
+          </section>
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
