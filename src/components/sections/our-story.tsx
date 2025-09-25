@@ -1,0 +1,64 @@
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { ArrowRight, Plus } from 'lucide-react';
+import Image from 'next/image';
+
+const storyElements = [
+  {
+    image: PlaceHolderImages.find((p) => p.id === 'story-1'),
+    title: 'The Brand',
+    description: 'Struggling with last-mile marketing and low visibility for a new product launch.',
+  },
+  {
+    image: PlaceHolderImages.find((p) => p.id === 'story-2'),
+    title: 'The Kirana',
+    description: 'With unused shelf space that could be generating income but sits empty.',
+  },
+  {
+    image: PlaceHolderImages.find((p) => p.id === 'story-3'),
+    title: 'The Consumer',
+    description: 'Unaware of new products and deals, sticking to the same old choices.',
+  },
+];
+
+export default function OurStory() {
+  return (
+    <section id="our-story" className="bg-secondary">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Alive?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          We saw disconnected players in a single ecosystem. So we built the bridge.
+        </p>
+        <div className="relative mt-16 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-0">
+          {storyElements.map((item, index) => (
+            <>
+              <div key={item.title} className="flex max-w-xs flex-col items-center gap-4">
+                {item.image && (
+                  <Image
+                    src={item.image.imageUrl}
+                    alt={item.image.description}
+                    width={200}
+                    height={200}
+                    data-ai-hint={item.image.imageHint}
+                    className="h-40 w-40 rounded-full object-cover shadow-lg"
+                  />
+                )}
+                <h3 className="font-headline text-xl font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </div>
+              {index < storyElements.length - 1 && (
+                <Plus className="h-8 w-8 text-primary md:mx-8" />
+              )}
+            </>
+          ))}
+        </div>
+        <div className="mt-12 flex flex-col items-center">
+            <ArrowRight className="h-10 w-10 text-primary animate-bounce-horizontal" />
+            <div className="mt-4 rounded-lg bg-primary p-6 text-primary-foreground shadow-xl">
+                <h3 className="font-headline text-2xl font-bold">Alive Connects Them All.</h3>
+                <p className="mt-2">Creating a thriving ecosystem where brands get seen, stores earn more, and consumers discover value.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+}

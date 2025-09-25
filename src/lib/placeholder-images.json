@@ -1,3 +1,106 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-kirana-store",
+      "description": "Animated kirana shop illustration",
+      "imageUrl": "https://images.unsplash.com/photo-1739066598279-1297113f5c6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxraXJhbmElMjBzdG9yZXxlbnwwfHx8fDE3NTg4MDY1NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kirana store"
+    },
+    {
+      "id": "before-alive-1",
+      "description": "Shelf with no ads",
+      "imageUrl": "https://images.unsplash.com/photo-1585742832932-df0a9809f546?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbXB0eSUyMHNoZWxmfGVufDB8fHx8MTc1ODczMDg4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "empty shelf"
+    },
+    {
+      "id": "with-alive-1",
+      "description": "Shelf with an Alive ad",
+      "imageUrl": "https://images.unsplash.com/photo-1688104170986-d7c6006ced3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzaGVsZiUyMGFkc3xlbnwwfHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shelf ads"
+    },
+    {
+      "id": "before-alive-2",
+      "description": "Consumer ignoring products",
+      "imageUrl": "https://images.unsplash.com/photo-1573382121730-2005f88463a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxib3JlZCUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bored shopper"
+    },
+    {
+      "id": "with-alive-2",
+      "description": "Consumer noticing a discount",
+      "imageUrl": "https://images.unsplash.com/photo-1758274251774-131c170e9cd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy shopper"
+    },
+    {
+      "id": "before-alive-3",
+      "description": "Brand struggling with reach",
+      "imageUrl": "https://images.unsplash.com/photo-1567496783621-5fcab4bbbb13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b3JyaWVkJTIwbWFya2V0ZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "worried marketer"
+    },
+    {
+      "id": "with-alive-3",
+      "description": "Brand gaining exposure",
+      "imageUrl": "https://picsum.photos/seed/7/600/400",
+      "imageHint": "successful brand"
+    },
+    {
+      "id": "deal-scanner-shelf",
+      "description": "A kirana shelf for the deal scanner simulation",
+      "imageUrl": "https://picsum.photos/seed/8/800/600",
+      "imageHint": "retail shelf"
+    },
+    {
+      "id": "story-1",
+      "description": "Illustration of a brand manager struggling",
+      "imageUrl": "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvZmZpY2UlMjB3b3JrZXJ8ZW58MHx8fHwxNzU4NzgzNzI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office worker"
+    },
+    {
+      "id": "story-2",
+      "description": "Illustration of a Kirana with unused space",
+      "imageUrl": "https://images.unsplash.com/photo-1531540823824-7d09de6461c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdG9yZSUyMG93bmVyfGVufDB8fHx8MTc1ODgwNjU1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "store owner"
+    },
+    {
+      "id": "story-3",
+      "description": "Illustration of an unaware consumer",
+      "imageUrl": "https://images.unsplash.com/photo-1708138831412-9a2eda734f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzaG9wcGVyJTIwcHJvZmlsZXxlbnwwfHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shopper profile"
+    },
+    {
+      "id": "team-zeba",
+      "description": "Portrait of Zeba",
+      "imageUrl": "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODc1MTMyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "team-hisham",
+      "description": "Portrait of Hisham",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-consumer",
+      "description": "Avatar for a consumer testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1656338997878-279d71d48f6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc1ODc5NDM2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "avatar-owner",
+      "description": "Avatar for a kirana owner testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1751901173169-1ca6df2a5f11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hvcCUyMG93bmVyfGVufDB8fHx8MTc1ODgwNjU1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shop owner"
+    },
+    {
+      "id": "avatar-brand",
+      "description": "Avatar for a brand manager testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3OTg4OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "kirana-explorer-bg",
+      "description": "Background image for the Kirana Store Explorer",
+      "imageUrl": "https://images.unsplash.com/photo-1707586834647-128c7f27d209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdG9yZSUyMGludGVyaW9yfGVufDB8fHx8MTc1ODcxODk4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "store interior"
+    }
+  ]
 }
