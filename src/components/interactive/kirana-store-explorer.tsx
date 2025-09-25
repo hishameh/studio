@@ -58,16 +58,6 @@ export default function KiranaStoreExplorer() {
                 placeholder="e.g., Koramangala, Bangalore"
                 />
             </div>
-             <div className="space-y-2">
-                <Label htmlFor="preferences">What are you looking for?</Label>
-                <Textarea
-                id="preferences"
-                value={preferences}
-                onChange={(e) => setPreferences(e.target.value)}
-                placeholder="e.g., 'fresh vegetables', 'friendly staff', 'accepts digital payments'"
-                />
-            </div>
-
 
             <Button onClick={handleFind} disabled={isLoading || !location} className="w-full">
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
