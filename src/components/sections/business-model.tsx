@@ -48,7 +48,7 @@ export default function BusinessModel() {
                 <CardDescription>{pkg.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-1 space-y-6">
-                <p className="text-4xl font-bold">{pkg.price}
+                <p className="font-sans text-4xl font-bold">{pkg.price}
                     {pkg.price.startsWith('₹') && <span className="text-sm font-normal text-muted-foreground">/mo</span>}
                 </p>
                 <ul className="space-y-3 text-left">
@@ -61,7 +61,7 @@ export default function BusinessModel() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className={`w-full ${pkg.name === 'Scale' ? 'text-base' : ''}`} variant={pkg.isFeatured ? 'default' : 'outline'}>
+                <Button className="w-full" variant={pkg.isFeatured ? 'default' : 'outline'}>
                   {pkg.name === 'Scale' ? 'Contact Us' : 'Get Started'}
                 </Button>
               </CardFooter>
