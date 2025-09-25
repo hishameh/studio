@@ -1,19 +1,18 @@
 import type { Metadata } from 'next';
-import { Poppins, PT_Sans } from 'next/font/google';
+import { Inter, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-const fontPoppins = Poppins({
+const fontHeadline = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-poppins',
+  weight: ['400', '500', '700'],
+  variable: '--font-headline',
 });
 
-const fontPtSans = PT_Sans({
+const fontBody = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-pt-sans',
+  variable: '--font-body',
 });
 
 export const metadata: Metadata = {
@@ -32,8 +31,8 @@ export default function RootLayout({
       <body
         className={cn(
           'min-h-screen bg-background font-body antialiased',
-          fontPoppins.variable,
-          fontPtSans.variable
+          fontHeadline.variable,
+          fontBody.variable
         )}
       >
         {children}

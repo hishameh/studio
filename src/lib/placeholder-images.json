@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-kirana-store",
-      "description": "Animated kirana shop illustration",
-      "imageUrl": "https://images.unsplash.com/photo-1739066598279-1297113f5c6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxraXJhbmElMjBzdG9yZXxlbnwwfHx8fDE3NTg4MDY1NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "kirana store"
+      "description": "A bustling and vibrant Kirana store with customers, conveying a sense of activity",
+      "imageUrl": "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXN5JTIwc3RvcmV8ZW58MHx8fHwxNzU4ODk5MjI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "busy store"
     },
     {
       "id": "before-alive-1",
@@ -15,13 +15,13 @@
     {
       "id": "with-alive-1",
       "description": "Shelf with an Alive ad",
-      "imageUrl": "https://images.unsplash.com/photo-1688104170986-d7c6006ced3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzaGVsZiUyMGFkc3xlbnwwfHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1718221472107-0bc35a67b1f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hlbGYlMjBhZHN8ZW58MHx8fHwxNzU4ODA2NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shelf ads"
     },
     {
       "id": "before-alive-2",
       "description": "Consumer ignoring products",
-      "imageUrl": "https://images.unsplash.com/photo-1573382121730-2005f88463a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxib3JlZCUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1663028051021-07b4f67a6bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxib3JlZCUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bored shopper"
     },
     {
@@ -33,19 +33,19 @@
     {
       "id": "before-alive-3",
       "description": "Brand struggling with reach",
-      "imageUrl": "https://images.unsplash.com/photo-1567496783621-5fcab4bbbb13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b3JyaWVkJTIwbWFya2V0ZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1568909555131-22b1b5d1c180?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b3JyaWVkJTIwbWFya2V0ZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "worried marketer"
     },
     {
       "id": "with-alive-3",
       "description": "Brand gaining exposure",
-      "imageUrl": "https://picsum.photos/seed/7/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1606337006669-a4b90367192b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3VjY2Vzc2Z1bCUyMGJyYW5kfGVufDB8fHx8MTc1ODgwNjU2OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "successful brand"
     },
     {
       "id": "deal-scanner-shelf",
       "description": "A kirana shelf for the deal scanner simulation",
-      "imageUrl": "https://picsum.photos/seed/8/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1734772337649-79615ba2f176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyZXRhaWwlMjBzaGVsZnxlbnwwfHx8fDE3NTg4MDY1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "retail shelf"
     },
     {

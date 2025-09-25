@@ -4,23 +4,23 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 200 50"
+      viewBox="0 0 120 30"
       width="120"
       height="30"
       {...props}
     >
       <text
-        x="10"
-        y="35"
-        fontFamily="var(--font-poppins), sans-serif"
-        fontSize="35"
+        x="0"
+        y="22"
+        fontFamily="var(--font-headline), sans-serif"
+        fontSize="28"
         fontWeight="bold"
-        fill="hsl(var(--primary-foreground))"
-        className="dark:fill-primary-foreground fill-primary"
+        fill="currentColor"
+        className="text-primary dark:text-primary-foreground"
       >
         alive
       </text>
-      <circle cx="100" cy="25" r="5" fill="hsl(var(--accent))" />
+      <circle cx="80" cy="15" r="5" fill="hsl(var(--primary))" />
     </svg>
   );
 }

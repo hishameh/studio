@@ -1,6 +1,5 @@
 import AliveMeter from "../interactive/alive-meter";
 import DataPulse from "../interactive/data-pulse";
-import DealScanner from "../interactive/deal-scanner";
 import ImpactCalculator from "../interactive/impact-calculator";
 import KiranaStoreExplorer from "../interactive/kirana-store-explorer";
 
@@ -20,7 +19,6 @@ export default function Features() {
         <KiranaStoreExplorer />
         <ImpactCalculator />
         <DataPulse />
-        <DealScanner />
         <AliveMeter />
       </div>
     </section>

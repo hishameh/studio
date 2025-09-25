@@ -6,19 +6,19 @@ const heroImage = PlaceHolderImages.find(p => p.id === 'hero-kirana-store');
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full bg-primary text-primary-foreground">
+    <section id="hero" className="w-full bg-secondary text-primary-foreground">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-24 md:grid-cols-2 md:py-32 lg:px-8">
         <div className="space-y-6 text-center md:text-left">
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Turning everyday kirana visits into discovery moments.
           </h1>
-          <p className="text-lg text-primary-foreground/80 md:text-xl">
+          <p className="text-lg text-muted-foreground md:text-xl">
             Alive connects small brands, big brands, kirana stores, and consumers—right where purchase decisions happen.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
-            <Button size="lg" variant="secondary" className="text-primary hover:bg-secondary/90">For Brands</Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10">For Kirana Stores</Button>
-            <Button size="lg" variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10">For Consumers</Button>
+            <Button size="lg" >For Brands</Button>
+            <Button size="lg" variant="outline">For Kirana Stores</Button>
+            <Button size="lg" variant="ghost">For Consumers</Button>
           </div>
         </div>
         <div className="relative h-64 w-full md:h-auto md:w-full md:pl-12">

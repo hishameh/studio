@@ -21,7 +21,7 @@ const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg');
 
 export default function KiranaStoreExplorer() {
   const [location, setLocation] = useState<Location | null>(null);
-  const [preferredTraits, setPreferredTraits] = useState('clean, well-stocked');
+  const [preferredTraits, setPreferredTraits] = useState('cleanliness, variety of products, friendly staff');
   const [personalizedResult, setPersonalizedResult] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -102,7 +102,7 @@ export default function KiranaStoreExplorer() {
         <Card>
             <CardHeader>
             <CardTitle className="font-headline text-2xl">Virtual Kirana Store Explorer</CardTitle>
-            <CardDescription>Discover stores tailored just for you.</CardDescription>
+            <CardDescription>A description of the preferred traits of kirana stores for the user, such as cleanliness, variety of products, and friendliness of staff.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
             <div className="space-y-2">
