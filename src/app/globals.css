@@ -60,6 +60,9 @@
 }
  
 @layer base {
+  html {
+    scroll-snap-type: y mandatory;
+  }
   * {
     @apply border-border;
   }
@@ -68,6 +71,11 @@
   }
   section {
     @apply w-full px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
