@@ -72,27 +72,7 @@
 }
 
 .font-headline {
-  font-family: var(--font-headline);
-}
-
-.font-body {
-  font-family: var(--font-body);
-}
-
-.rolling-counter span {
-  animation: roll 2s ease-in-out forwards;
-  display: inline-block;
-}
-
-@keyframes roll {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  font-family: var(--font-sans);
 }
 
 .brand-logos {

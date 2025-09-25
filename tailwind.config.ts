@@ -19,8 +19,6 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', 'sans-serif'],
-        headline: ['var(--font-sans)', 'sans-serif'],
-        body: ['var(--font-sans)', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -78,26 +76,10 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
-        'meter-fill': {
-          from: { width: '0%' },
-          to: { width: '100%' },
-        },
-        'bubble-pop': {
-          '0%': { transform: 'scale(0)', opacity: '0' },
-          '70%': { transform: 'scale(1.1)', opacity: '1' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
-        'bounce-horizontal': {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '50%': { transform: 'translateX(10px)' },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'meter-fill': 'meter-fill 2s ease-in-out forwards',
-        'bubble-pop': 'bubble-pop 0.5s ease-out forwards',
-        'bounce-horizontal': 'bounce-horizontal 1s ease-in-out infinite',
       },
     },
   },
