@@ -3,39 +3,71 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-kirana-store');
+const collageImages = [
+    PlaceHolderImages.find(p => p.id === 'story-1'),
+    PlaceHolderImages.find(p => p.id === 'story-2'),
+    PlaceHolderImages.find(p => p.id === 'story-3'),
+].filter(Boolean) as typeof PlaceHolderImages;
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full bg-secondary text-primary-foreground">
+    <section id="hero" className="w-full bg-secondary">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-24 md:grid-cols-2 md:py-32 lg:px-8">
         <div className="space-y-6 text-center md:text-left">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Turning everyday kirana visits into discovery moments.
+            Seen. Remembered. Bought.
           </h1>
           <p className="text-lg text-muted-foreground md:text-xl">
-            Alive connects small brands, big brands, kirana stores, and consumers—right where purchase decisions happen.
+            Alive connects brands, kirana stores, and consumers—right where purchase decisions happen.
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
-            <Button size="lg" >For Brands</Button>
-            <Button size="lg" variant="outline">For Kirana Stores</Button>
-            <Button size="lg" variant="ghost">For Consumers</Button>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+             <Button size="lg" className="bg-primary/90 text-primary-foreground hover:bg-primary">For Brands</Button>
+             <Button size="lg" className="bg-primary/80 text-primary-foreground hover:bg-primary">For Kirana Stores</Button>
+             <Button size="lg" className="bg-primary/70 text-primary-foreground hover:bg-primary">For Consumers</Button>
           </div>
         </div>
-        <div className="relative h-64 w-full md:h-auto md:w-full md:pl-12">
+        <div className="relative h-96 w-full">
             {heroImage && (
                 <Image
                     src={heroImage.imageUrl}
                     alt={heroImage.description}
-                    width={600}
-                    height={400}
+                    fill
                     data-ai-hint={heroImage.imageHint}
                     className="rounded-lg shadow-2xl object-cover"
+                    priority
                 />
             )}
-             <div className="absolute -bottom-4 -right-4 w-40 animate-bubble-pop rounded-lg bg-accent p-3 text-center text-sm font-semibold text-accent-foreground shadow-lg">
-                <p>New Brand Discovery!</p>
-                <p className="text-xs font-normal">Get 20% OFF</p>
-            </div>
+             <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
+             {collageImages[0] && (
+                <Image
+                    src={collageImages[0].imageUrl}
+                    alt={collageImages[0].description}
+                    width={120}
+                    height={120}
+                    data-ai-hint={collageImages[0].imageHint}
+                    className="absolute top-8 left-8 rounded-lg object-cover shadow-lg border-4 border-white transform -rotate-12 transition-transform hover:scale-110"
+                />
+             )}
+             {collageImages[1] && (
+                <Image
+                    src={collageImages[1].imageUrl}
+                    alt={collageImages[1].description}
+                    width={100}
+                    height={100}
+                    data-ai-hint={collageImages[1].imageHint}
+                    className="absolute bottom-12 right-12 rounded-full object-cover shadow-lg border-4 border-white transform rotate-6 transition-transform hover:scale-110"
+                />
+             )}
+             {collageImages[2] && (
+                <Image
+                    src={collageImages[2].imageUrl}
+                    alt={collageImages[2].description}
+                    width={80}
+                    height={80}
+                    data-ai-hint={collageImages[2].imageHint}
+                    className="absolute top-1/2 left-1/3 rounded-md object-cover shadow-lg border-4 border-white transform rotate-3 transition-transform hover:scale-110"
+                />
+             )}
         </div>
       </div>
     </section>

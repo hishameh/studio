@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter, DM_Sans } from 'next/font/google';
+import { Poppins, PT_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-const fontHeadline = DM_Sans({
+const fontHeadline = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-headline',
 });
 
-const fontBody = Inter({
+const fontBody = PT_Sans({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-body',
 });
 

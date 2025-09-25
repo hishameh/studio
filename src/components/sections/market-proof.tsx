@@ -1,59 +1,35 @@
 'use client';
 
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useCountUp } from '@/hooks/use-count-up';
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend, Cell } from 'recharts';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 
-const marketData = [
+
+const comparisonData = [
   {
-    name: 'Kirana Stores',
-    value: 13,
-    unit: 'M',
-    description: 'in India',
+    metric: 'Recall Rate',
+    digital: 74,
+    traditional: 29,
+    description: 'Consumers are more likely to remember ads they see at the point of purchase.'
   },
   {
-    name: 'OoH Ad Market',
-    value: 52.8,
-    unit: 'B',
-    description: 'by 2025 (₹)',
+    metric: 'Purchase Intent',
+    digital: 62,
+    traditional: 15,
+    description: 'Digital in-store ads drive immediate consideration and action.'
   },
   {
-    name: 'Ad Spend p/c',
-    value: 37.2,
-    unit: '',
-    description: 'in India (2025, ₹)',
-  },
+    metric: 'Cost per Impression',
+    digital: 0.5,
+    traditional: 2.0,
+    description: 'Hyper-targeted ads mean less waste and a better return on investment.'
+  }
 ];
 
-const chartData = [
-  {
-    country: 'India',
-    adSpend: 37.20,
-  },
-  {
-    country: 'China',
-    adSpend: 820,
-  },
-];
-
-const chartConfig = {
-  adSpend: {
-    label: "Ad Spend (₹)",
-    color: "hsl(var(--accent))",
-  },
-}
-
-function Counter({ end, unit, description }: { end: number; unit: string; description: string }) {
-  const { count, ref } = useCountUp(end, 2000);
-  return (
-    <div ref={ref} className="text-center">
-      <p className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl lg:text-6xl">
-        {count.toLocaleString('en-IN')}{unit}
-      </p>
-      <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-    </div>
-  );
-}
+const COLORS = {
+  digital: 'hsl(var(--primary))',
+  traditional: 'hsl(var(--muted))'
+};
 
 export default function MarketProof() {
   return (
@@ -61,16 +37,35 @@ export default function MarketProof() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            The Opportunity is Huge.
+            The Digital Advantage in Retail
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Retail media is the next frontier, and India's kirana network is the untapped goldmine.
+            In-store digital media isn't just new, it's quantifiably better. We turn passive shoppers into active buyers.
           </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {marketData.map((item) => (
-            <Counter key={item.name} end={item.value} unit={item.unit} description={item.description} />
+          {comparisonData.map((item) => (
+            <Card key={item.metric} className="text-center">
+                <CardHeader>
+                    <CardTitle className="font-headline">{item.metric}</CardTitle>
+                    <CardDescription className="h-10">{item.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="rounded-lg bg-primary/10 p-4">
+                            <TrendingUp className="mx-auto h-8 w-8 text-primary" />
+                            <p className="text-4xl font-bold text-primary">{item.metric.includes('Cost') ? `₹${item.digital}`: `${item.digital}%`}</p>
+                            <p className="text-sm font-semibold">Alive (Digital)</p>
+                        </div>
+                        <div className="rounded-lg bg-muted/50 p-4">
+                            <TrendingDown className="mx-auto h-8 w-8 text-muted-foreground" />
+                             <p className="text-4xl font-bold text-muted-foreground">{item.metric.includes('Cost') ? `₹${item.traditional}`: `${item.traditional}%`}</p>
+                            <p className="text-sm font-semibold">Traditional</p>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
           ))}
         </div>
 
@@ -78,16 +73,21 @@ export default function MarketProof() {
             <Card>
                 <CardHeader>
                     <CardTitle className="font-headline">
-                        Untapped Potential: Ad Spend Per Capita (₹)
+                        Ad Effectiveness: Digital Point-of-Sale vs. Traditional Media
                     </CardTitle>
+                    <CardDescription>Percentage increase in key marketing metrics.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="h-[250px] w-full">
+                    <div className="h-[300px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                            <BarChart 
+                                data={comparisonData.filter(d => !d.metric.includes('Cost'))}
+                                margin={{ top: 5, right: 20, left: -10, bottom: 5 }}
+                                barGap={10}
+                            >
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                <XAxis dataKey="country" stroke="hsl(var(--muted-foreground))" />
-                                <YAxis stroke="hsl(var(--muted-foreground))" />
+                                <XAxis dataKey="metric" stroke="hsl(var(--muted-foreground))" />
+                                <YAxis stroke="hsl(var(--muted-foreground))" unit="%"/>
                                 <Tooltip
                                     cursor={{ fill: 'hsl(var(--secondary))' }}
                                     contentStyle={{
@@ -95,7 +95,17 @@ export default function MarketProof() {
                                         borderColor: 'hsl(var(--border))'
                                     }}
                                 />
-                                <Bar dataKey="adSpend" fill="hsl(var(--accent))" radius={[4, 4, 0, 0]} />
+                                <Legend />
+                                <Bar dataKey="digital" name="Alive (Digital)" radius={[4, 4, 0, 0]}>
+                                    {comparisonData.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS.digital} />
+                                    ))}
+                                </Bar>
+                                 <Bar dataKey="traditional" name="Traditional" radius={[4, 4, 0,- 0]}>
+                                     {comparisonData.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS.traditional} />
+                                    ))}
+                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
