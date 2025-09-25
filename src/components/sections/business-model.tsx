@@ -12,7 +12,7 @@ const packages = [
   },
   {
     name: 'Growth',
-    price: '₹25,000',
+    price: '25,000 rs',
     description: 'Ideal for growing brands aiming for regional impact.',
     features: ['50 Stores', 'Up to 300,000 Impressions', 'Advanced Analytics', 'A/B Testing'],
     isFeatured: true,
@@ -49,7 +49,7 @@ export default function BusinessModel() {
               </CardHeader>
               <CardContent className="flex-1 space-y-6">
                 <p className="text-4xl font-bold">{pkg.price}
-                    {pkg.price.startsWith('₹') && <span className="text-sm font-normal text-muted-foreground">/mo</span>}
+                    {pkg.price.startsWith('₹') || pkg.price.endsWith('rs') && <span className="text-sm font-normal text-muted-foreground">/mo</span>}
                 </p>
                 <ul className="space-y-3 text-left">
                   {pkg.features.map((feature) => (
