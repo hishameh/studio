@@ -9,13 +9,13 @@
     {
       "id": "before-alive-1",
       "description": "Shelf with no ads",
-      "imageUrl": "https://images.unsplash.com/photo-1585742832932-df0a9809f546?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbXB0eSUyMHNoZWxmfGVufDB8fHx8MTc1ODczMDg4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1584568694489-f71bdbac55e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbXB0eSUyMHNoZWxmfGVufDB8fHx8MTc1ODczMDg4MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "empty shelf"
     },
     {
       "id": "with-alive-1",
       "description": "Shelf with an Alive ad",
-      "imageUrl": "https://images.unsplash.com/photo-1718221472107-0bc35a67b1f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hlbGYlMjBhZHN8ZW58MHx8fHwxNzU4ODA2NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1607957045224-e0e69750e895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzaGVsZiUyMGFkc3xlbnwwfHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shelf ads"
     },
     {
@@ -27,13 +27,13 @@
     {
       "id": "with-alive-2",
       "description": "Consumer noticing a discount",
-      "imageUrl": "https://images.unsplash.com/photo-1758274251774-131c170e9cd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758525223565-2ee93c6328d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoYXBweSUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy shopper"
     },
     {
       "id": "before-alive-3",
       "description": "Brand struggling with reach",
-      "imageUrl": "https://images.unsplash.com/photo-1568909555131-22b1b5d1c180?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b3JyaWVkJTIwbWFya2V0ZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1660254340210-22048fc6abac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29ycmllZCUyMG1hcmtldGVyfGVufDB8fHx8MTc1ODgwNjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "worried marketer"
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": "story-2",
       "description": "Illustration of a Kirana with unused space",
-      "imageUrl": "https://images.unsplash.com/photo-1531540823824-7d09de6461c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdG9yZSUyMG93bmVyfGVufDB8fHx8MTc1ODgwNjU1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1531540823824-7d09de6461c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdG9yZSUyMG93bmVyfGVufDB8fHx8fDE3NTg4MDY1NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "store owner"
     },
     {
@@ -65,18 +65,6 @@
       "description": "Illustration of an unaware consumer",
       "imageUrl": "https://images.unsplash.com/photo-1708138831412-9a2eda734f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzaG9wcGVyJTIwcHJvZmlsZXxlbnwwfHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shopper profile"
-    },
-    {
-      "id": "team-zeba",
-      "description": "Portrait of Zeba",
-      "imageUrl": "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODc1MTMyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman portrait"
-    },
-    {
-      "id": "team-hisham",
-      "description": "Portrait of Hisham",
-      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man portrait"
     },
     {
       "id": "avatar-consumer",
@@ -98,9 +86,39 @@
     },
     {
       "id": "kirana-explorer-bg",
-      "description": "Background image for the Kirana Store Explorer",
-      "imageUrl": "https://images.unsplash.com/photo-1707586834647-128c7f27d209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdG9yZSUyMGludGVyaW9yfGVufDB8fHx8MTc1ODcxODk4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "store interior"
+      "description": "Indian kirana store owner and consumer",
+      "imageUrl": "https://images.unsplash.com/photo-1634139800214-3db172d889e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxraXJhbmElMjBvd25lciUyMGNvbnN1bWVyfGVufDB8fHx8MTc1ODgxMDEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kirana owner consumer"
+    },
+    {
+      "id": "collage-1",
+      "description": "Indian kirana store",
+      "imageUrl": "https://images.unsplash.com/photo-1631819539802-720166c2651f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBraXJhbmF8ZW58MHx8fHwxNzU4ODEwMDk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian kirana"
+    },
+    {
+      "id": "collage-2",
+      "description": "Advertisement on a screen",
+      "imageUrl": "https://picsum.photos/seed/tvad/200/200",
+      "imageHint": "tv advertisement"
+    },
+    {
+      "id": "collage-3",
+      "description": "Happy indian customer",
+      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGN1c3RvbWVyfGVufDB8fHx8MTc1ODcxNTExNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy customer"
+    },
+    {
+      "id": "collage-4",
+      "description": "Another happy customer",
+      "imageUrl": "https://images.unsplash.com/photo-1533128361669-69c065857a13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5kaWFuJTIwd29tYW58ZW58MHx8fHwxNzU4NzcwOTMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian woman"
+    },
+    {
+      "id": "collage-5",
+      "description": "Close up of products on shelf",
+      "imageUrl": "https://images.unsplash.com/photo-1607103058066-0cc3e67f97be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaGVsZiUyMHByb2R1Y3RzfGVufDB8fHx8MTc1ODgxMDA5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shelf products"
     }
   ]
 }

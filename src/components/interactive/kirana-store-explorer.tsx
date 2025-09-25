@@ -65,7 +65,7 @@ export default function KiranaStoreExplorer() {
                         <div>
                             <MapPin className="h-8 w-8 mx-auto text-accent"/>
                             <p className="text-2xl font-bold">{results.stores.toLocaleString()}+</p>
-                            <p className="text-sm text-muted-foreground">Partner Stores</p>
+                            <p className="text-sm text-muted-foreground">Stores</p>
                         </div>
                         <div>
                             <Users className="h-8 w-8 mx-auto text-accent"/>

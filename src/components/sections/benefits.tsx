@@ -1,56 +1,54 @@
+'use client';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { DollarSign, EyeOff, Smile, TrendingUp, Zap } from 'lucide-react';
 
-const InvisibleIcon = () => (
+const KiranaIconBefore = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-24 w-24 text-muted-foreground">
-        <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
-        <path d="M8.5 10.5c.5-1 1.5-2 4-2s3.5 1 4 2"/>
-        <path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Z"/>
-        <path d="M22 12c-4.5 0-8-4-8-4"/>
-        <path d="M2 12c4.5 0 8-4 8-4"/>
+        <path d="M4 21V10.957C4 10.428 4.21 9.92 4.586 9.586l6-5.25a2 2 0 0 1 2.828 0l6 5.25C19.79 9.92 20 10.428 20 10.957V21"/><path d="M12 21V15"/><path d="M7 21v-3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/><path d="M15 10h2"/><path d="M7 10h2"/>
+        <line x1="8" y1="18" x2="16" y2="18" strokeDasharray="4 2"/>
     </svg>
 );
 
-const VisibleIcon = () => (
+const KiranaIconAfter = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-24 w-24 text-primary">
-         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-         <circle cx="12" cy="12" r="3" />
-         <path d="M12 21a9 9 0 1 1 0-18 99 0 0 1 0 18Z" fill="hsl(var(--primary))" stroke="none" opacity="0.3"/>
+        <path d="M4 21V10.957C4 10.428 4.21 9.92 4.586 9.586l6-5.25a2 2 0 0 1 2.828 0l6 5.25C19.79 9.92 20 10.428 20 10.957V21"/><path d="M12 21V15"/><path d="M7 21v-3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/>
+        <path d="M15.5 10.5 17 12l-1.5 1.5"/>
+        <path d="M8.5 10.5 7 12l1.5 1.5"/>
+        <path d="M12 8l1 2-1 2-1-2z"/>
+        <path d="M10 18h4" className="stroke-[3px]"/>
     </svg>
 );
 
-const SadConsumerIcon = () => (
+const ConsumerIconBefore = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-24 w-24 text-muted-foreground">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M8 15s1.5-2 4-2 4 2 4 2" />
-        <path d="M9 9h.01" />
-        <path d="M15 9h.01" />
+        <circle cx="12" cy="12" r="10" /><path d="M16 16s-1.5-2-4-2-4 2-4 2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" />
+        <path d="M5.1 5.1 18.9 18.9" />
     </svg>
 );
 
-const HappyConsumerIcon = () => (
+const ConsumerIconAfter = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-24 w-24 text-primary">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-        <path d="M9 9h.01" />
-        <path d="M15 9h.01" />
-        <path d="M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" fill="hsl(var(--primary))" stroke="none" opacity="0.3"/>
+        <circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" />
+        <path d="M12 6.5c-3.5 0-6 2-6 2s1.5 2 6 2 6-2 6-2-2.5-2-6-2z" fill="hsl(var(--primary))" opacity="0.3" stroke="none" />
+        <circle cx="12" cy="7.5" r="1" fill="currentColor" />
     </svg>
 );
 
-const StrugglingBrandIcon = () => (
+const BrandIconBefore = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-24 w-24 text-muted-foreground">
-        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-        <path d="m9 15 6-6" />
-        <path d="m15 15-6-6" />
+        <path d="M21.73 18a2.64 2.64 0 0 1-2.05 1H4.32a2.64 2.64 0 0 1-2.05-1L.22 13.15a1.29 1.29 0 0 1 .58-1.56L3 10.7V4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6.7l2.2.89a1.29 1.29 0 0 1 .58 1.56Z"/><path d="M9 10v-.5a3.5 3.5 0 1 1 7 0V10"/>
+        <line x1="6" y1="2" x2="6" y2="4" /><line x1="18" y1="2" x2="18" y2="4" />
+        <path d="M12 19a4 4 0 0 0-4-4h8a4 4 0 0 0-4 4Z"/>
     </svg>
 );
 
-const ThrivingBrandIcon = () => (
+const BrandIconAfter = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-24 w-24 text-primary">
-        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-        <path d="m9 12 2 2 4-4" />
-        <path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Z" fill="hsl(var(--primary))" stroke="none" opacity="0.3"/>
+        <path d="M5 22h14"/><path d="M5 22a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4Z"/><path d="M5 18a14 14 0 0 1 14 0"/><path d="M9 14h6"/>
+        <path d="M9 10h6"/>
+        <path d="M15 6H9"/>
+        <path d="m14 14 3-3"/><path d="m7 11 3 3"/>
     </svg>
 );
 
@@ -59,37 +57,37 @@ const slides = [
   {
     before: {
       title: 'Before Alive',
-      icon: InvisibleIcon,
-      description: 'Empty, unnoticed shelf space.'
+      icon: KiranaIconBefore,
+      description: 'Unused shelf space, unrealized income.'
     },
     after: {
       title: 'With Alive',
-      icon: VisibleIcon,
-      description: 'Dynamic ad space generating income.'
+      icon: KiranaIconAfter,
+      description: 'A new revenue stream from dynamic ads.'
     },
   },
   {
     before: {
         title: 'Before Alive',
-        icon: SadConsumerIcon,
-        description: 'Consumers overlook new products.'
+        icon: ConsumerIconBefore,
+        description: 'Overlooked products and missed deals.'
       },
       after: {
         title: 'With Alive',
-        icon: HappyConsumerIcon,
-        description: 'Engaging deals capture attention.'
+        icon: ConsumerIconAfter,
+        description: 'Discover new products and save money.'
       },
   },
   {
     before: {
         title: 'Before Alive',
-        icon: StrugglingBrandIcon,
-        description: 'Brands struggle for local visibility.'
+        icon: BrandIconBefore,
+        description: 'Struggling for visibility at the local level.'
       },
       after: {
         title: 'With Alive',
-        icon: ThrivingBrandIcon,
-        description: 'Targeted exposure drives sales.'
+        icon: BrandIconAfter,
+        description: 'Hyper-targeted ads that drive trial and sales.'
       },
   },
 ];

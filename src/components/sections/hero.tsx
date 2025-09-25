@@ -4,9 +4,11 @@ import Image from 'next/image';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-kirana-store');
 const collageImages = [
-    PlaceHolderImages.find(p => p.id === 'story-1'),
-    PlaceHolderImages.find(p => p.id === 'story-2'),
-    PlaceHolderImages.find(p => p.id === 'story-3'),
+    PlaceHolderImages.find(p => p.id === 'collage-1'),
+    PlaceHolderImages.find(p => p.id === 'collage-2'),
+    PlaceHolderImages.find(p => p.id === 'collage-3'),
+    PlaceHolderImages.find(p => p.id === 'collage-4'),
+    PlaceHolderImages.find(p => p.id === 'collage-5'),
 ].filter(Boolean) as typeof PlaceHolderImages;
 
 export default function Hero() {
@@ -26,7 +28,7 @@ export default function Hero() {
              <Button size="lg" className="bg-primary/70 text-primary-foreground hover:bg-primary">For Consumers</Button>
           </div>
         </div>
-        <div className="relative h-96 w-full">
+        <div className="relative h-96 w-full lg:h-[500px]">
             {heroImage && (
                 <Image
                     src={heroImage.imageUrl}
@@ -45,7 +47,7 @@ export default function Hero() {
                     width={120}
                     height={120}
                     data-ai-hint={collageImages[0].imageHint}
-                    className="absolute top-8 left-8 rounded-lg object-cover shadow-lg border-4 border-white transform -rotate-12 transition-transform hover:scale-110"
+                    className="absolute top-4 left-4 rounded-lg object-cover shadow-lg border-4 border-white transform -rotate-12 transition-transform hover:scale-125"
                 />
              )}
              {collageImages[1] && (
@@ -55,7 +57,7 @@ export default function Hero() {
                     width={100}
                     height={100}
                     data-ai-hint={collageImages[1].imageHint}
-                    className="absolute bottom-12 right-12 rounded-full object-cover shadow-lg border-4 border-white transform rotate-6 transition-transform hover:scale-110"
+                    className="absolute bottom-8 right-8 rounded-full object-cover shadow-lg border-4 border-white transform rotate-6 transition-transform hover:scale-125"
                 />
              )}
              {collageImages[2] && (
@@ -65,7 +67,27 @@ export default function Hero() {
                     width={80}
                     height={80}
                     data-ai-hint={collageImages[2].imageHint}
-                    className="absolute top-1/2 left-1/3 rounded-md object-cover shadow-lg border-4 border-white transform rotate-3 transition-transform hover:scale-110"
+                    className="absolute top-1/2 left-1/3 rounded-md object-cover shadow-lg border-4 border-white transform rotate-3 transition-transform hover:scale-125"
+                />
+             )}
+             {collageImages[3] && (
+                <Image
+                    src={collageImages[3].imageUrl}
+                    alt={collageImages[3].description}
+                    width={90}
+                    height={90}
+                    data-ai-hint={collageImages[3].imageHint}
+                    className="absolute top-8 right-12 rounded-lg object-cover shadow-lg border-4 border-white transform rotate-12 transition-transform hover:scale-125"
+                />
+             )}
+              {collageImages[4] && (
+                <Image
+                    src={collageImages[4].imageUrl}
+                    alt={collageImages[4].description}
+                    width={70}
+                    height={70}
+                    data-ai-hint={collageImages[4].imageHint}
+                    className="absolute bottom-8 left-16 rounded-full object-cover shadow-lg border-4 border-white transform -rotate-6 transition-transform hover:scale-125"
                 />
              )}
         </div>

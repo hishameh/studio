@@ -15,8 +15,7 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
         fontFamily="var(--font-headline), sans-serif"
         fontSize="28"
         fontWeight="bold"
-        fill="currentColor"
-        className="text-foreground"
+        className="fill-current"
       >
         alive
       </text>
