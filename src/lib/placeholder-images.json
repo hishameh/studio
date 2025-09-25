@@ -7,42 +7,6 @@
       "imageHint": "busy store"
     },
     {
-      "id": "before-alive-1",
-      "description": "Shelf with no ads",
-      "imageUrl": "https://images.unsplash.com/photo-1584568694489-f71bdbac55e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbXB0eSUyMHNoZWxmfGVufDB8fHx8MTc1ODczMDg4MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "empty shelf"
-    },
-    {
-      "id": "with-alive-1",
-      "description": "Shelf with an Alive ad",
-      "imageUrl": "https://images.unsplash.com/photo-1607957045224-e0e69750e895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzaGVsZiUyMGFkc3xlbnwwfHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "shelf ads"
-    },
-    {
-      "id": "before-alive-2",
-      "description": "Consumer ignoring products",
-      "imageUrl": "https://images.unsplash.com/photo-1663028051021-07b4f67a6bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxib3JlZCUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "bored shopper"
-    },
-    {
-      "id": "with-alive-2",
-      "description": "Consumer noticing a discount",
-      "imageUrl": "https://images.unsplash.com/photo-1758525223565-2ee93c6328d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoYXBweSUyMHNob3BwZXJ8ZW58MHx8fHwxNzU4ODA2NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy shopper"
-    },
-    {
-      "id": "before-alive-3",
-      "description": "Brand struggling with reach",
-      "imageUrl": "https://images.unsplash.com/photo-1660254340210-22048fc6abac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29ycmllZCUyMG1hcmtldGVyfGVufDB8fHx8MTc1ODgwNjU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "worried marketer"
-    },
-    {
-      "id": "with-alive-3",
-      "description": "Brand gaining exposure",
-      "imageUrl": "https://images.unsplash.com/photo-1606337006669-a4b90367192b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3VjY2Vzc2Z1bCUyMGJyYW5kfGVufDB8fHx8MTc1ODgwNjU2OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "successful brand"
-    },
-    {
       "id": "deal-scanner-shelf",
       "description": "A kirana shelf for the deal scanner simulation",
       "imageUrl": "https://images.unsplash.com/photo-1734772337649-79615ba2f176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyZXRhaWwlMjBzaGVsZnxlbnwwfHx8fDE3NTg4MDY1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -69,13 +33,13 @@
     {
       "id": "avatar-consumer",
       "description": "Avatar for a consumer testimonial",
-      "imageUrl": "https://images.unsplash.com/photo-1656338997878-279d71d48f6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc1ODc5NDM2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1656338997878-279d71d48f6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8fDE3NTg3OTQzNjliDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person smiling"
     },
     {
       "id": "avatar-owner",
       "description": "Avatar for a kirana owner testimonial",
-      "imageUrl": "https://images.unsplash.com/photo-1751901173169-1ca6df2a5f11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hvcCUyMG93bmVyfGVufDB8fHx8MTc1ODgwNjU1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1751901173169-1ca6df2a5f11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hvcCUyMG93bmVyfGVufDB8fHx8fDE3NTg4MDY1NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shop owner"
     },
     {
@@ -86,9 +50,9 @@
     },
     {
       "id": "kirana-explorer-bg",
-      "description": "Indian kirana store owner and consumer",
-      "imageUrl": "https://images.unsplash.com/photo-1634139800214-3db172d889e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxraXJhbmElMjBvd25lciUyMGNvbnN1bWVyfGVufDB8fHx8MTc1ODgxMDEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "kirana owner consumer"
+      "description": "Happy indian kirana store owner with customer",
+      "imageUrl": "https://images.unsplash.com/photo-1634139800214-3db172d889e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBraXJhbmElMjBjdXN0b21lcnxlbnwwfHx8fDE3NTk0Mzk3ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian kirana customer"
     },
     {
       "id": "collage-1",
@@ -98,14 +62,14 @@
     },
     {
       "id": "collage-2",
-      "description": "Advertisement on a screen",
-      "imageUrl": "https://picsum.photos/seed/tvad/200/200",
-      "imageHint": "tv advertisement"
+      "description": "Digital display advertisement in a store",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkaWdpdGFsJTIwZGlzcGxheSUyMGFkfGVufDB8fHx8MTc1OTQzOTkzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital display ad"
     },
     {
       "id": "collage-3",
       "description": "Happy indian customer",
-      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGN1c3RvbWVyfGVufDB8fHx8MTc1ODcxNTExNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGN1c3RvbWVyfGVufDB8fHx8fDE3NTg3MTUxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy customer"
     },
     {
@@ -117,7 +81,7 @@
     {
       "id": "collage-5",
       "description": "Close up of products on shelf",
-      "imageUrl": "https://images.unsplash.com/photo-1607103058066-0cc3e67f97be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaGVsZiUyMHByb2R1Y3RzfGVufDB8fHx8MTc1ODgxMDA5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1607103058066-0cc3e67f97be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaGVsZiUyMHByb2R1Y3RzfGVufDB8fHx8fDE3NTg4MTAwOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shelf products"
     }
   ]

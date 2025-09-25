@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-24 md:grid-cols-2 md:py-32 lg:px-8">
         <div className="space-y-6 text-center md:text-left">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Seen. Remembered. Bought.
+            <span className="text-primary">Seen.</span> Remembered. Bought.
           </h1>
           <p className="text-lg text-muted-foreground md:text-xl">
             Alive connects brands, kirana stores, and consumers—right where purchase decisions happen.
