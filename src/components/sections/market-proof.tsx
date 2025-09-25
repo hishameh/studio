@@ -1,9 +1,7 @@
 'use client';
 
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend, PieChart, Pie, Cell } from 'recharts';
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend, PieChart, Pie, Cell, Area, AreaChart } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrendingUp, TrendingDown, LocateIcon, Users, HandCoins } from 'lucide-react';
-
 
 const comparisonData = [
   {
@@ -31,6 +29,13 @@ const cpaData = [
     { name: 'Traditional', value: 2.00 }
 ];
 
+const salesUpliftData = [
+  { name: 'Week 1', uplift: 2.5 },
+  { name: 'Week 2', uplift: 3.8 },
+  { name: 'Week 3', uplift: 5.1 },
+  { name: 'Week 4', uplift: 7.2 },
+];
+
 const COLORS = {
   digital: 'hsl(var(--primary))',
   traditional: 'hsl(var(--muted))',
@@ -50,60 +55,33 @@ export default function MarketProof() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {comparisonData.map((item) => (
-            <Card key={item.metric} className="text-center">
-                <CardHeader>
-                    <CardTitle className="font-headline">{item.metric}</CardTitle>
-                    <CardDescription className="h-10">{item.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="rounded-lg bg-primary/10 p-4">
-                            <TrendingUp className="mx-auto h-8 w-8 text-primary" />
-                            <p className="text-4xl font-bold text-primary">{`${item.digital}%`}</p>
-                            <p className="text-sm font-semibold">Alive (Digital)</p>
-                        </div>
-                        <div className="rounded-lg bg-muted/50 p-4">
-                            <TrendingDown className="mx-auto h-8 w-8 text-muted-foreground" />
-                             <p className="text-4xl font-bold text-muted-foreground">{`${item.traditional}%`}</p>
-                            <p className="text-sm font-semibold">Traditional</p>
-                        </div>
-                    </div>
-                </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline">
-                        Ad Effectiveness Comparison
-                    </CardTitle>
-                    <CardDescription>Percentage increase in key marketing metrics.</CardDescription>
+                    <CardTitle className="font-headline">Ad Effectiveness</CardTitle>
+                    <CardDescription>Key marketing metrics.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="h-[250px] w-full">
+                    <div className="h-[200px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart 
                                 data={comparisonData}
-                                margin={{ top: 5, right: 20, left: -10, bottom: 5 }}
+                                layout="vertical"
+                                margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                                 barGap={10}
                             >
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                <XAxis dataKey="metric" stroke="hsl(var(--muted-foreground))" fontSize={12} />
-                                <YAxis stroke="hsl(var(--muted-foreground))" unit="%"/>
+                                <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                                <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} unit="%" />
+                                <YAxis dataKey="metric" type="category" stroke="hsl(var(--muted-foreground))" fontSize={10} width={80} />
                                 <Tooltip
-                                    cursor={{ fill: 'hsl(var(--secondary))' }}
+                                    cursor={false}
+                                    animationDuration={300}
                                     contentStyle={{
                                         background: 'hsl(var(--background))',
                                         borderColor: 'hsl(var(--border))'
                                     }}
                                 />
-                                <Legend wrapperStyle={{ fontSize: '0.8rem' }} />
-                                <Bar dataKey="digital" name="Alive (Digital)" radius={[4, 4, 0, 0]} fill={COLORS.digital} />
-                                <Bar dataKey="traditional" name="Traditional" radius={[4, 4, 0, 0]} fill={COLORS.traditional} />
+                                <Bar dataKey="digital" name="Alive" radius={[0, 4, 4, 0]} fill={COLORS.digital} isAnimationActive={true} animationDuration={900} />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -111,13 +89,11 @@ export default function MarketProof() {
             </Card>
              <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline">
-                        Cost Per Acquisition (CPA)
-                    </CardTitle>
-                    <CardDescription>Average cost to acquire a new customer.</CardDescription>
+                    <CardTitle className="font-headline">Cost Per Acquisition</CardTitle>
+                    <CardDescription>Average cost for a new customer.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="h-[250px] w-full">
+                    <div className="h-[200px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
                                 <Pie
@@ -126,22 +102,89 @@ export default function MarketProof() {
                                     nameKey="name"
                                     cx="50%"
                                     cy="50%"
-                                    outerRadius={80}
+                                    outerRadius={60}
                                     label={(props) => `₹${props.value.toFixed(2)}`}
+                                    isAnimationActive={true}
+                                    animationDuration={900}
                                 >
                                     {cpaData.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? COLORS.digital : COLORS.traditional} />
                                     ))}
                                 </Pie>
                                 <Tooltip
-                                    cursor={{ fill: 'hsl(var(--secondary))' }}
+                                    cursor={false}
+                                    animationDuration={300}
                                     contentStyle={{
                                         background: 'hsl(var(--background))',
                                         borderColor: 'hsl(var(--border))'
                                     }}
                                 />
-                                <Legend wrapperStyle={{ fontSize: '0.8rem' }} />
+                                <Legend wrapperStyle={{ fontSize: '0.8rem' }} iconSize={10} />
                             </PieChart>
+                        </ResponsiveContainer>
+                    </div>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline">Sales Uplift Over Time</CardTitle>
+                    <CardDescription>Campaign impact on sales.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="h-[200px] w-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                             <AreaChart data={salesUpliftData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                                <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} unit="%" />
+                                <Tooltip
+                                    cursor={false}
+                                    animationDuration={300}
+                                    contentStyle={{
+                                        background: 'hsl(var(--background))',
+                                        borderColor: 'hsl(var(--border))'
+                                    }}
+                                />
+                                <defs>
+                                    <linearGradient id="colorUplift" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor={COLORS.digital} stopOpacity={0.8}/>
+                                    <stop offset="95%" stopColor={COLORS.digital} stopOpacity={0}/>
+                                    </linearGradient>
+                                </defs>
+                                <Area type="monotone" dataKey="uplift" stroke={COLORS.digital} fill="url(#colorUplift)" strokeWidth={2} isAnimationActive={true} animationDuration={900} />
+                            </AreaChart>
+                        </ResponsiveContainer>
+                    </div>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline">Traditional Ad Decay</CardTitle>
+                    <CardDescription>Recall of print/radio ads over time.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="h-[200px] w-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                             <AreaChart data={[{name: 'Day 1', recall: 30}, {name: 'Day 7', recall: 15}, {name: 'Day 30', recall: 5}]} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                                <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} unit="%" />
+                                <Tooltip
+                                    cursor={false}
+                                    animationDuration={300}
+                                    contentStyle={{
+                                        background: 'hsl(var(--background))',
+                                        borderColor: 'hsl(var(--border))'
+                                    }}
+                                />
+                                <defs>
+                                    <linearGradient id="colorDecay" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor={COLORS.traditional} stopOpacity={0.4}/>
+                                    <stop offset="95%" stopColor={COLORS.traditional} stopOpacity={0}/>
+                                    </linearGradient>
+                                </defs>
+                                <Area type="monotone" dataKey="recall" stroke={COLORS.traditional} fill="url(#colorDecay)" strokeWidth={2} isAnimationActive={true} animationDuration={900} />
+                            </AreaChart>
                         </ResponsiveContainer>
                     </div>
                 </CardContent>

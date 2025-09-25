@@ -61,8 +61,8 @@ export default function BusinessModel() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" variant={pkg.isFeatured ? 'default' : 'outline'}>
-                  {pkg.name === 'Scale' ? 'Contact Sales' : 'Get Started'}
+                <Button className={`w-full ${pkg.name === 'Scale' ? 'text-base' : ''}`} variant={pkg.isFeatured ? 'default' : 'outline'}>
+                  {pkg.name === 'Scale' ? 'Contact Us' : 'Get Started'}
                 </Button>
               </CardFooter>
             </Card>

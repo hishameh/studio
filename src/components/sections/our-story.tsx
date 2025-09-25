@@ -1,6 +1,9 @@
+'use client';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowRight, Plus } from 'lucide-react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const storyElements = [
   {
@@ -20,9 +23,46 @@ const storyElements = [
   },
 ];
 
+const StoryElement = ({ item, index }: { item: (typeof storyElements)[0], index: number }) => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ['start end', 'end center']
+    });
+    const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
+    return (
+        <motion.div ref={ref} style={{ scale, opacity }}>
+            <div className="flex max-w-xs flex-col items-center gap-4 text-center">
+            {item.image && (
+                <Image
+                src={item.image.imageUrl}
+                alt={item.image.description}
+                width={200}
+                height={200}
+                data-ai-hint={item.image.imageHint}
+                className="h-40 w-40 rounded-full object-cover shadow-lg"
+                />
+            )}
+            <h3 className="font-headline text-xl font-semibold">{item.title}</h3>
+            <p className="text-muted-foreground">{item.description}</p>
+            </div>
+        </motion.div>
+    )
+}
+
 export default function OurStory() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+  
   return (
-    <section id="our-story" className="bg-secondary">
+    <section id="our-story" className="bg-secondary relative overflow-hidden">
+      <motion.div style={{ y }} ref={ref}>
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Alive?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -31,22 +71,11 @@ export default function OurStory() {
         <div className="relative mt-16 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-0">
           {storyElements.map((item, index) => (
             <>
-              <div key={item.title} className="flex max-w-xs flex-col items-center gap-4">
-                {item.image && (
-                  <Image
-                    src={item.image.imageUrl}
-                    alt={item.image.description}
-                    width={200}
-                    height={200}
-                    data-ai-hint={item.image.imageHint}
-                    className="h-40 w-40 rounded-full object-cover shadow-lg"
-                  />
-                )}
-                <h3 className="font-headline text-xl font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
+              <StoryElement item={item} index={index} />
               {index < storyElements.length - 1 && (
-                <Plus className="h-8 w-8 text-primary md:mx-8" />
+                <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}} transition={{delay: 0.5 * (index + 2)}}>
+                    <Plus className="h-8 w-8 text-primary md:mx-8" />
+                </motion.div>
               )}
             </>
           ))}
@@ -59,6 +88,7 @@ export default function OurStory() {
             </div>
         </div>
       </div>
+      </motion.div>
     </section>
   );
 }

@@ -5,30 +5,36 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Loader2, MapPin, TrendingUp, Users } from 'lucide-react';
+import { Loader2, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { personalizeExplorerAction } from '@/lib/actions';
+import { Textarea } from '../ui/textarea';
+import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
 
 const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg');
 
 export default function KiranaStoreExplorer() {
   const [location, setLocation] = useState('Bangalore');
+  const [preferences, setPreferences] = useState('clean stores, good variety of products');
   const [isLoading, setIsLoading] = useState(false);
-  const [results, setResults] = useState({ stores: 0, impressions: 0, impact: ''});
+  const [results, setResults] = useState('');
+  const [error, setError] = useState('');
   
-  const handleFind = () => {
+  const handleFind = async () => {
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-        const storeCount = Math.floor(Math.random() * (250 - 150 + 1)) + 150;
-        const impressionCount = storeCount * (Math.floor(Math.random() * (450 - 350 + 1)) + 350);
-        setResults({
-            stores: storeCount,
-            impressions: impressionCount,
-            impact: 'High consumer engagement & brand recall.'
-        });
-        setIsLoading(false);
-    }, 1500);
+    setResults('');
+    setError('');
+    const response = await personalizeExplorerAction({
+      userLocation: location,
+      preferredStoreTraits: preferences,
+    });
+    if (response.success && response.data) {
+      setResults(response.data.personalizedStoreList);
+    } else {
+      setError(response.error || 'Something went wrong.');
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -39,12 +45,12 @@ export default function KiranaStoreExplorer() {
 
         <Card>
             <CardHeader>
-            <CardTitle className="font-headline text-2xl">Kirana Impact Explorer</CardTitle>
-            <CardDescription>Estimate the potential Alive impressions in your area.</CardDescription>
+            <CardTitle className="font-headline text-2xl flex items-center gap-2"><MapPin/> Kirana Explorer (AI-Powered)</CardTitle>
+            <CardDescription>Find the best stores near you based on your preferences.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
             <div className="space-y-2">
-                <Label htmlFor="location">Enter your city or locality</Label>
+                <Label htmlFor="location">Your City</Label>
                 <Input
                 id="location"
                 value={location}
@@ -52,33 +58,37 @@ export default function KiranaStoreExplorer() {
                 placeholder="e.g., Koramangala, Bangalore"
                 />
             </div>
+             <div className="space-y-2">
+                <Label htmlFor="preferences">What are you looking for?</Label>
+                <Textarea
+                id="preferences"
+                value={preferences}
+                onChange={(e) => setPreferences(e.target.value)}
+                placeholder="e.g., 'fresh vegetables', 'friendly staff', 'accepts digital payments'"
+                />
+            </div>
+
 
             <Button onClick={handleFind} disabled={isLoading || !location} className="w-full">
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {isLoading ? 'Calculating...' : 'Estimate Impact'}
+                {isLoading ? 'Personalizing...' : <> <Search className='mr-2' /> Find Stores </>}
             </Button>
 
-            {results.stores > 0 && (
-                <div className="mt-4 rounded-md border bg-secondary/50 p-4 space-y-4">
-                    <h4 className="font-semibold text-center">Estimated Reach in <span className="text-primary">{location}</span>:</h4>
-                    <div className="flex justify-around text-center">
-                        <div>
-                            <MapPin className="h-8 w-8 mx-auto text-accent"/>
-                            <p className="text-2xl font-bold">{results.stores.toLocaleString()}+</p>
-                            <p className="text-sm text-muted-foreground">Stores</p>
-                        </div>
-                        <div>
-                            <Users className="h-8 w-8 mx-auto text-accent"/>
-                            <p className="text-2xl font-bold">{results.impressions.toLocaleString()}</p>
-                            <p className="text-sm text-muted-foreground">Weekly Impressions</p>
-                        </div>
-                    </div>
-                     <div className="text-center pt-2">
-                        <TrendingUp className="h-8 w-8 mx-auto text-accent"/>
-                        <p className="text-lg font-bold">{results.impact}</p>
-                        <p className="text-sm text-muted-foreground">Potential Impact</p>
-                    </div>
-                </div>
+            {results && (
+                <Alert>
+                    <AlertTitle className='font-headline'>Personalized Results for {location}</AlertTitle>
+                    <AlertDescription className="whitespace-pre-wrap">
+                        {results}
+                    </AlertDescription>
+                </Alert>
+            )}
+             {error && (
+                <Alert variant="destructive">
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription>
+                        {error}
+                    </AlertDescription>
+                </Alert>
             )}
             </CardContent>
         </Card>

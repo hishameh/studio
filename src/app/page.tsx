@@ -20,11 +20,12 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], ['50px', '0px', '50px']);
+
+  const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
-    <motion.div ref={ref} style={{ opacity, y }}>
+    <motion.div ref={ref} style={{ y, opacity }}>
       {children}
     </motion.div>
   );
@@ -32,20 +33,21 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Header />
       <main className="flex-1">
+        <Hero />
         <AnimatedSection>
-          <Hero />
+          <Brands />
         </AnimatedSection>
         <AnimatedSection>
           <HowItWorks />
         </AnimatedSection>
         <AnimatedSection>
-          <MarketProof />
+          <Benefits />
         </AnimatedSection>
         <AnimatedSection>
-          <Benefits />
+          <MarketProof />
         </AnimatedSection>
         <AnimatedSection>
           <Features />
@@ -56,12 +58,7 @@ export default function Home() {
         <AnimatedSection>
           <BusinessModel />
         </AnimatedSection>
-        <AnimatedSection>
-          <OurStory />
-        </AnimatedSection>
-         <AnimatedSection>
-          <Brands />
-        </AnimatedSection>
+        <OurStory />
         <AnimatedSection>
           <ClosingCta />
         </AnimatedSection>
