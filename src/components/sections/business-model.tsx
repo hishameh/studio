@@ -7,27 +7,52 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight, Star } from 'lucide-react';
 
 const plans = [
-  { screens: 1, plays: '~144', views: '~4,320', fee: '₹799' },
-  { screens: 2, plays: '~288', views: '~8,640', fee: '₹1499' },
-  { screens: 3, plays: '~432', views: '~12,960', fee: '₹2399' },
-];
-
-const features = [
-  'Targeted Reach: ~200 daily shoppers per store (~6,000+ monthly views per screen).',
-  'Affordable Plans: Starting at just ₹799 per month, scale across multiple screens.',
-  'Extra Advantage: Option to distribute free product samples in stores for direct consumer trials.',
-  'High Recall, High Impact - 12 hours of daily screen time with repeated exposure to increase stronger brand memory.',
+  {
+    name: 'Starter',
+    price: '799',
+    description: 'Perfect for getting started and testing the waters in a single high-traffic location.',
+    shops: '1 Shop',
+    screens: '1 Screen',
+    features: [
+      '~144 plays per day',
+      '~4,320 monthly views',
+      'Targeted local reach',
+      'Basic performance analytics'
+    ],
+    isPopular: false,
+  },
+  {
+    name: 'Growth',
+    price: '2,249',
+    description: 'Expand your reach across multiple key stores to capture a larger audience.',
+    shops: '3 Shops',
+    screens: '3 Screens',
+    features: [
+      '~432 plays per day',
+      '~12,960 monthly views',
+      'Multi-store campaign management',
+      'Detailed analytics & insights',
+      'Priority support'
+    ],
+    isPopular: true,
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    description: 'Maximum impact with wide-scale deployment and tailored solutions.',
+    shops: '5+ Shops',
+    screens: 'Custom',
+    features: [
+      'Volume-based pricing',
+      'Dedicated account manager',
+      'API access & integrations',
+      'Custom creative services'
+    ],
+    isPopular: false,
+  },
 ];
 
 export default function BusinessModel() {
@@ -35,63 +60,50 @@ export default function BusinessModel() {
     <section id="business-model" className="bg-background">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-          Brand Spotlight Plans
+          Find a Plan That Works for You
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          10-sec ads, played every 2 minutes. Best for: Local shops, trial
-          campaigns, single-product promos.
+          Affordable, scalable plans designed to put your brand in the spotlight.
         </p>
 
-        <Card className="mt-12 w-full max-w-4xl mx-auto">
-          <CardHeader className="text-center">
-            <div className="font-sans text-xl font-semibold text-primary">
-              Starts at just{' '}
-              <span className="text-3xl font-bold">₹799</span> per shop, per
-              month.
-            </div>
-            <p className="text-sm text-muted-foreground">
-              That’s only ₹0.13 per ad impression.
-            </p>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="text-center">Screens</TableHead>
-                  <TableHead className="text-center">
-                    Frequency (per screen/day)
-                  </TableHead>
-                  <TableHead className="text-center">Monthly Views</TableHead>
-                  <TableHead className="text-center">Monthly Fee</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {plans.map((plan) => (
-                  <TableRow key={plan.screens}>
-                    <TableCell className="text-center font-medium">
-                      {plan.screens}
-                    </TableCell>
-                    <TableCell className="text-center">{plan.plays}</TableCell>
-                    <TableCell className="text-center">{plan.views}</TableCell>
-                    <TableCell className="text-center font-bold text-primary">
-                      {plan.fee}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
-
-        <div className="mt-16 text-left max-w-4xl mx-auto">
-           <ul className="space-y-4">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {plans.map((plan) => (
+            <Card key={plan.name} className={`flex flex-col ${plan.isPopular ? 'border-primary border-2' : ''}`}>
+               {plan.isPopular && (
+                <div className="bg-primary text-primary-foreground text-sm font-bold py-1 px-4 rounded-t-lg -mt-px flex items-center justify-center gap-2">
+                  <Star className="w-4 h-4" /> Most Popular
+                </div>
+              )}
+              <CardHeader className="text-left">
+                <CardTitle className="font-headline text-2xl">{plan.name}</CardTitle>
+                <CardDescription>{plan.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1 space-y-6 text-left">
+                 <div>
+                    <span className="font-headline text-4xl font-bold">
+                        {plan.price !== 'Custom' ? '₹' + plan.price : 'Custom'}
+                    </span>
+                    <span className="text-muted-foreground">
+                        {plan.price !== 'Custom' ? ' /mo' : ''}
+                    </span>
+                 </div>
+                <ul className="space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button className="w-full" variant={plan.name === 'Growth' ? 'default' : 'outline'}>
+                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

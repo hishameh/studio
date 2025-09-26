@@ -6,15 +6,18 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const bgImage = PlaceHolderImages.find((p) => p.id === 'alive-tv-bg');
-const adImages = [
+const adImagesData = [
   PlaceHolderImages.find((p) => p.id === 'alive-tv-ad-1'),
   PlaceHolderImages.find((p) => p.id === 'alive-tv-ad-2'),
-].filter(Boolean) as (typeof PlaceHolderImages);
+];
+
+const adImages = adImagesData.filter(Boolean) as (typeof PlaceHolderImages);
 
 export default function AliveTV() {
   const [currentAd, setCurrentAd] = useState(0);
 
   useEffect(() => {
+    if (adImages.length === 0) return;
     const timer = setInterval(() => {
       setCurrentAd((prev) => (prev + 1) % adImages.length);
     }, 4000);

@@ -42,6 +42,19 @@ const COLORS = {
   pie: ['hsl(var(--chart-1))', 'hsl(var(--chart-2))', 'hsl(var(--chart-3))']
 };
 
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="rounded-lg border bg-popover p-2 text-popover-foreground shadow-sm">
+        <p className="font-bold text-popover-foreground">{`${payload[0].name}: ₹${payload[0].value.toFixed(2)}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+
 export default function MarketProof() {
   return (
     <section id="market-proof" className="bg-background">
@@ -74,7 +87,7 @@ export default function MarketProof() {
                                 <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} unit="%" />
                                 <YAxis dataKey="metric" type="category" stroke="hsl(var(--muted-foreground))" fontSize={10} width={80} />
                                 <Tooltip
-                                    cursor={false}
+                                    cursor={{fill: 'hsl(var(--muted))'}}
                                     animationDuration={300}
                                     contentStyle={{
                                         background: 'hsl(var(--popover))',
@@ -108,19 +121,15 @@ export default function MarketProof() {
                                     isAnimationActive={false}
                                 >
                                     {cpaData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={index === 0 ? COLORS.digital : COLORS.traditional} />
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? COLORS.digital : COLORS.traditional} stroke={index === 0 ? COLORS.digital : COLORS.traditional} />
                                     ))}
                                 </Pie>
                                 <Tooltip
                                     cursor={false}
                                     animationDuration={300}
-                                    contentStyle={{
-                                        background: 'hsl(var(--popover))',
-                                        borderColor: 'hsl(var(--border))',
-                                        color: 'hsl(var(--popover-foreground))'
-                                    }}
+                                    content={ <CustomTooltip /> }
                                 />
-                                <Legend wrapperStyle={{ fontSize: '0.8rem' }} iconSize={10} />
+                                <Legend wrapperStyle={{ fontSize: '0.8rem', color: 'hsl(var(--foreground))' }} iconSize={10} />
                             </PieChart>
                         </ResponsiveContainer>
                     </div>
