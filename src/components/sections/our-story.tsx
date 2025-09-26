@@ -4,6 +4,7 @@ import { ArrowRight, Plus } from 'lucide-react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import React from 'react';
 
 const storyElements = [
   {
@@ -70,14 +71,14 @@ export default function OurStory() {
         </p>
         <div className="relative mt-20 flex flex-col items-center justify-center gap-12 md:flex-row md:gap-0">
           {storyElements.map((item, index) => (
-            <>
+            <React.Fragment key={item.title}>
               <StoryElement item={item} index={index} />
               {index < storyElements.length - 1 && (
                 <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}} transition={{delay: 0.5 * (index + 2)}}>
                     <Plus className="h-8 w-8 text-primary md:mx-12" />
                 </motion.div>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
         <div className="mt-20 flex flex-col items-center">
