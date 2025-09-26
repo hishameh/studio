@@ -20,9 +20,13 @@ import {
 const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg');
 
 const locations: Record<string, string[]> = {
-    'Bangalore': ['Koramangala', 'Indiranagar', 'Jayanagar', 'Whitefield'],
-    'Mumbai': ['Bandra', 'Andheri', 'Dadar', 'Colaba'],
-    'Delhi': ['Connaught Place', 'Hauz Khas', 'Karol Bagh', 'Chandni Chowk'],
+    'Bangalore': ['Koramangala', 'Indiranagar', 'Jayanagar', 'Whitefield', 'HSR Layout', 'BTM Layout'],
+    'Mumbai': ['Bandra', 'Andheri', 'Dadar', 'Colaba', 'Thane', 'Juhu'],
+    'Delhi': ['Connaught Place', 'Hauz Khas', 'Karol Bagh', 'Chandni Chowk', 'Noida', 'Gurgaon'],
+    'Chennai': ['T. Nagar', 'Adyar', 'Anna Nagar', 'Velachery'],
+    'Kolkata': ['Park Street', 'Salt Lake', 'Howrah', 'Ballygunge'],
+    'Hyderabad': ['Banjara Hills', 'Jubilee Hills', 'Gachibowli', 'Hitech City'],
+    'Pune': ['Koregaon Park', 'Deccan Gymkhana', 'Hinjewadi', 'Viman Nagar'],
 };
 
 const cities = Object.keys(locations);
