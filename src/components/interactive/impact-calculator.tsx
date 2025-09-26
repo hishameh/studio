@@ -19,11 +19,11 @@ const ImpactCalculator = () => {
   const calculatedImpact = useMemo(() => {
     const costPerShop = 750; // Average cost per shop per month
     const impressionsPerShop = 6000;
-    const customersPer1000Impressions = 5; // New customers per 1000 impressions
+    const customersPerRupee = 50 / 750; // 50 customers per shop cost
 
     const shops = Math.floor(budget / costPerShop);
     const impressions = shops * impressionsPerShop;
-    const customers = Math.floor((impressions / 1000) * customersPer1000Impressions);
+    const customers = Math.floor(budget * customersPerRupee);
     
     return { shops, impressions, customers };
   }, [budget]);
