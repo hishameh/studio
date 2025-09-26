@@ -17,16 +17,17 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg');
+const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg-2');
 
 const locations: Record<string, string[]> = {
-    'Bangalore': ['Koramangala', 'Indiranagar', 'Jayanagar', 'Whitefield', 'HSR Layout', 'BTM Layout'],
-    'Mumbai': ['Bandra', 'Andheri', 'Dadar', 'Colaba', 'Thane', 'Juhu'],
-    'Delhi': ['Connaught Place', 'Hauz Khas', 'Karol Bagh', 'Chandni Chowk', 'Noida', 'Gurgaon'],
-    'Chennai': ['T. Nagar', 'Adyar', 'Anna Nagar', 'Velachery'],
-    'Kolkata': ['Park Street', 'Salt Lake', 'Howrah', 'Ballygunge'],
-    'Hyderabad': ['Banjara Hills', 'Jubilee Hills', 'Gachibowli', 'Hitech City'],
-    'Pune': ['Koregaon Park', 'Deccan Gymkhana', 'Hinjewadi', 'Viman Nagar'],
+    'Mangalore': ['Hampankatta', 'Kadri', 'Lalbagh', 'Bejai', 'Urwa', 'Kankanady', 'Balmatta'],
+    'Bangalore': [],
+    'Mumbai': [],
+    'Delhi': [],
+    'Chennai': [],
+    'Kolkata': [],
+    'Hyderabad': [],
+    'Pune': [],
 };
 
 const cities = Object.keys(locations);
@@ -56,7 +57,11 @@ export default function KiranaStoreExplorer() {
 
   const handleCityChange = (newCity: string) => {
     setCity(newCity);
-    setLocality(locations[newCity][0]);
+    if(locations[newCity].length > 0) {
+      setLocality(locations[newCity][0]);
+    } else {
+      setLocality('');
+    }
     setResults(null);
   }
 
@@ -85,18 +90,22 @@ export default function KiranaStoreExplorer() {
                                 <SelectValue placeholder="Select a city" />
                             </SelectTrigger>
                             <SelectContent>
-                                {cities.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                                {cities.map(c => 
+                                  <SelectItem key={c} value={c} disabled={locations[c].length === 0}>
+                                    {c} {locations[c].length > 0 ? '(Live)' : '(Coming Soon)'}
+                                  </SelectItem>
+                                )}
                             </SelectContent>
                         </Select>
                     </div>
                      <div className="space-y-2">
                         <Label htmlFor="locality">Target Locality</Label>
-                        <Select value={locality} onValueChange={handleLocalityChange}>
+                        <Select value={locality} onValueChange={handleLocalityChange} disabled={!city || locations[city].length === 0}>
                             <SelectTrigger id="locality">
                                 <SelectValue placeholder="Select a locality" />
                             </SelectTrigger>
                             <SelectContent>
-                                {locations[city].map(l => <SelectItem key={l} value={l}>{l}</SelectItem>)}
+                                {city && locations[city].map(l => <SelectItem key={l} value={l}>{l}</SelectItem>)}
                             </SelectContent>
                         </Select>
                     </div>

@@ -1,44 +1,22 @@
 'use client';
-import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Building, HeartHandshake, Package, ShoppingCart, TrendingUp } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { CheckCircle, Upload, Target } from 'lucide-react';
 
-const slides = [
+const steps = [
   {
-    for: 'Kirana Stores',
-    icon: Building,
-    before: {
-      title: 'Before Alive',
-      description: 'Unused shelf space, unrealized income.'
-    },
-    after: {
-      title: 'With Alive',
-      description: 'A new revenue stream from dynamic ads.'
-    },
+    icon: Upload,
+    title: 'Step 1: Upload Your Ad',
+    description: "Easily upload your brand's video or image creative to our platform. Our system optimizes it for in-store display.",
   },
   {
-    for: 'Consumers',
-    icon: ShoppingCart,
-    before: {
-        title: 'Before Alive',
-        description: 'Overlooked products and missed deals.'
-      },
-      after: {
-        title: 'With Alive',
-        description: 'Discover new products and save money.'
-      },
+    icon: Target,
+    title: 'Step 2: Target Your Audience',
+    description: 'Select the cities, localities, and even individual stores where you want your ad to be seen. Hyper-local targeting made simple.',
   },
   {
-    for: 'Brands',
-    icon: Package,
-    before: {
-        title: 'Before Alive',
-        description: 'Struggling for visibility at the local level.'
-      },
-      after: {
-        title: 'With Alive',
-        description: 'Hyper-targeted ads that drive trial and sales.'
-      },
+    icon: CheckCircle,
+    title: 'Step 3: Go Live!',
+    description: "Your ad appears on 'Alive' screens in your chosen kiranas, influencing purchase decisions at the exact right moment.",
   },
 ];
 
@@ -47,45 +25,27 @@ export default function HowItWorks() {
     <section id="how-it-works" className="bg-secondary">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-          A Tangible Transformation
+          How It Works
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          See the difference Alive makes at the point of purchase.
+          Launch your in-store campaign in three simple steps.
         </p>
 
-        <Carousel opts={{ loop: true }} className="mt-12 w-full">
-          <CarouselContent>
-            {slides.map((slide, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2">
-                      <div className="space-y-4 text-center">
-                        <h3 className="font-headline text-xl font-semibold text-muted-foreground">{slide.before.title}</h3>
-                        <div className="flex justify-center">
-                           <slide.icon className="h-16 w-16 text-muted-foreground/50"/>
-                        </div>
-                        <p>{slide.before.description}</p>
-                      </div>
-                      <div className="space-y-4 text-center">
-                        <h3 className="font-headline text-xl font-semibold text-primary">{slide.after.title}</h3>
-                         <div className="flex justify-center">
-                            <div className="relative">
-                               <slide.icon className="h-16 w-16 text-primary" />
-                               <TrendingUp className="absolute -bottom-2 -right-2 h-8 w-8 text-green-500 bg-background rounded-full p-1" />
-                            </div>
-                         </div>
-                        <p className="font-semibold">{slide.after.description}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {steps.map((step, index) => (
+            <Card key={index} className="text-center">
+              <CardHeader>
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <step.icon className="h-6 w-6" />
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="ml-12 hidden sm:flex" />
-          <CarouselNext className="mr-12 hidden sm:flex" />
-        </Carousel>
+              </CardHeader>
+              <CardContent>
+                <CardTitle className="font-headline text-xl mb-2">{step.title}</CardTitle>
+                <p className="text-muted-foreground">{step.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );
