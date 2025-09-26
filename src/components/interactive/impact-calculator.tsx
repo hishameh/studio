@@ -23,7 +23,7 @@ const ImpactCalculator = () => {
 
     const shops = Math.floor(budget / costPerShop);
     const impressions = shops * impressionsPerShop;
-    const customers = Math.floor(budget * customersPerRupee);
+    const customers = Math.floor(budget * customersPerRupee * 50);
     
     return { shops, impressions, customers };
   }, [budget]);
