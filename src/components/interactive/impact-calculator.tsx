@@ -15,7 +15,7 @@ import { Badge } from '../ui/badge';
 
 const formatNumber = (num: number) => Math.round(num).toLocaleString('en-IN');
 const IMPRESSIONS_PER_SHOP_PER_MONTH = 6000;
-const REACH_PER_SHOP = 6000;
+const REACH_PER_SHOP = 1500;
 const COST_PER_SHOP_PER_MONTH = 799;
 
 export default function ImpactCalculator() {
@@ -136,7 +136,7 @@ export default function ImpactCalculator() {
                   </span>
                   <Badge variant="default" className="text-lg">
                     {formatNumber(brandOutputs.reach)} shoppers
-                  </Badge>
+                  </badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">
@@ -155,7 +155,7 @@ export default function ImpactCalculator() {
                   </span>
                   <Badge variant="default" className="text-lg">
                     ₹{formatNumber(storeOutputs.monthlyIncome)}
-                  </Badge>
+                  </badge>
                 </div>
               </div>
             )}
