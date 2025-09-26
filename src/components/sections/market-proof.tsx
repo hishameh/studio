@@ -82,7 +82,7 @@ export default function MarketProof() {
                                         color: 'hsl(var(--popover-foreground))'
                                     }}
                                 />
-                                <Bar dataKey="digital" name="Alive" radius={[0, 4, 4, 0]} fill={COLORS.digital} isAnimationActive={true} animationDuration={900} />
+                                <Bar dataKey="digital" name="Alive" radius={[0, 4, 4, 0]} fill={COLORS.digital} isAnimationActive={false} />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -105,8 +105,7 @@ export default function MarketProof() {
                                     cy="50%"
                                     outerRadius={60}
                                     label={(props) => `₹${props.value.toFixed(2)}`}
-                                    isAnimationActive={true}
-                                    animationDuration={900}
+                                    isAnimationActive={false}
                                 >
                                     {cpaData.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? COLORS.digital : COLORS.traditional} />
@@ -154,7 +153,7 @@ export default function MarketProof() {
                                     <stop offset="95%" stopColor={COLORS.digital} stopOpacity={0}/>
                                     </linearGradient>
                                 </defs>
-                                <Area type="monotone" dataKey="uplift" stroke={COLORS.digital} fill="url(#colorUplift)" strokeWidth={2} isAnimationActive={true} animationDuration={900} />
+                                <Area type="monotone" dataKey="uplift" stroke={COLORS.digital} fill="url(#colorUplift)" strokeWidth={2} isAnimationActive={false} />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -187,7 +186,7 @@ export default function MarketProof() {
                                     <stop offset="95%" stopColor={COLORS.traditional} stopOpacity={0}/>
                                     </linearGradient>
                                 </defs>
-                                <Area type="monotone" dataKey="recall" stroke={COLORS.traditional} fill="url(#colorDecay)" strokeWidth={2} isAnimationActive={true} animationDuration={900} />
+                                <Area type="monotone" dataKey="recall" stroke={COLORS.traditional} fill="url(#colorDecay)" strokeWidth={2} isAnimationActive={false} />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>

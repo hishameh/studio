@@ -1,8 +1,8 @@
 'use server';
 /**
- * @fileOverview A Kirana Store Explorer Personalization AI agent.
+ * @fileOverview A Kirana Store Impact Explorer AI agent.
  *
- * - personalizeKiranaStoreExplorer - A function that handles the kirana store explorer personalization process.
+ * - personalizeKiranaStoreExplorer - A function that handles the kirana store impact estimation process.
  * - PersonalizeKiranaStoreExplorerInput - The input type for the personalizeKiranaStoreExplorer function.
  * - PersonalizeKiranaStoreExplorerOutput - The return type for the personalizeKiranaStoreExplorer function.
  */
@@ -11,24 +11,23 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const PersonalizeKiranaStoreExplorerInputSchema = z.object({
-  userLocation: z
-    .string()
-    .describe('The user location, including latitude and longitude.'),
-  preferredStoreTraits: z
-    .string()
-    .describe(
-      'A description of the preferred traits of kirana stores for the user, such as cleanliness, variety of products, and friendliness of staff.'
-    ),
+  city: z.string().describe('The city where the user wants to estimate reach.'),
+  locality: z.string().describe('The specific locality within the city.'),
 });
 export type PersonalizeKiranaStoreExplorerInput = z.infer<
   typeof PersonalizeKiranaStoreExplorerInputSchema
 >;
 
 const PersonalizeKiranaStoreExplorerOutputSchema = z.object({
-  personalizedStoreList: z
-    .string()
+  shops: z
+    .number()
     .describe(
-      'A list of kirana stores personalized for the user based on their location and preferences.'
+      'The estimated number of partner kirana shops available in a 5km radius of the given locality.'
+    ),
+  impressions: z
+    .number()
+    .describe(
+      'The estimated total monthly ad impressions across all available partner shops in that radius.'
     ),
 });
 export type PersonalizeKiranaStoreExplorerOutput = z.infer<
@@ -45,20 +44,18 @@ const prompt = ai.definePrompt({
   name: 'personalizeKiranaStoreExplorerPrompt',
   input: {schema: PersonalizeKiranaStoreExplorerInputSchema},
   output: {schema: PersonalizeKiranaStoreExplorerOutputSchema},
-  prompt: `You are an expert in personalizing the Kirana Store Explorer experience for users.
+  prompt: `You are an expert in Indian retail demographics and kirana store distribution. Your task is to estimate the potential advertising reach for a given locality.
 
-You will use the user's location and preferred store traits to generate a list of Kirana stores that are most relevant and appealing to them.
+You will use the provided city and locality to generate a realistic estimation of available partner shops and the total monthly ad impressions they would generate.
 
-User Location: {{{userLocation}}}
-Preferred Store Traits: {{{preferredStoreTraits}}}
+City: {{{city}}}
+Locality: {{{locality}}}
 
-Based on this information, generate a personalized list of Kirana stores for the user. Consider factors such as proximity, store characteristics, and user preferences to create a compelling and relevant list.
+Based on this information, provide the following estimations for a 5km radius around the locality:
+1.  **shops**: A realistic number of kirana stores we could partner with. This should be a reasonable integer, not an exact count. For a dense metro area like Koramangala, Bangalore, a number between 40-60 is reasonable. For a less dense area, it would be lower.
+2.  **impressions**: The total estimated monthly ad impressions. Assume each shop generates about 6,000 impressions per month. So, impressions = shops * 6000.
 
-{{#if preferredStoreTraits}}
-  Prioritize stores that match the following preferred traits: {{{preferredStoreTraits}}}
-{{/if}}
-
-Ensure that the list is well-formatted and easy to understand, providing a seamless and enjoyable browsing experience for the user.
+Return the data in the specified JSON format.
 `,
 });
 

@@ -11,26 +11,27 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { personalizeExplorerAction } from '@/lib/actions';
 import { Textarea } from '../ui/textarea';
 import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
+import { Badge } from '../ui/badge';
 
 const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg');
 
 export default function KiranaStoreExplorer() {
-  const [location, setLocation] = useState('Bangalore');
-  const [preferences, setPreferences] = useState('clean stores, good variety of products');
+  const [city, setCity] = useState('Bangalore');
+  const [locality, setLocality] = useState('Koramangala');
   const [isLoading, setIsLoading] = useState(false);
-  const [results, setResults] = useState('');
+  const [results, setResults] = useState<{impressions: number, shops: number} | null>(null);
   const [error, setError] = useState('');
   
   const handleFind = async () => {
     setIsLoading(true);
-    setResults('');
+    setResults(null);
     setError('');
     const response = await personalizeExplorerAction({
-      userLocation: location,
-      preferredStoreTraits: preferences,
+      city,
+      locality,
     });
     if (response.success && response.data) {
-      setResults(response.data.personalizedStoreList);
+      setResults(response.data);
     } else {
       setError(response.error || 'Something went wrong.');
     }
@@ -45,30 +46,51 @@ export default function KiranaStoreExplorer() {
 
         <Card>
             <CardHeader>
-            <CardTitle className="font-headline text-2xl flex items-center gap-2"><MapPin/> Kirana Explorer (AI-Powered)</CardTitle>
-            <CardDescription>Find the best stores near you based on your preferences.</CardDescription>
+            <CardTitle className="font-headline text-2xl flex items-center gap-2"><MapPin/> Kirana Impact Explorer</CardTitle>
+            <CardDescription>Estimate your brand's reach in a specific area.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-            <div className="space-y-2">
-                <Label htmlFor="location">Your City</Label>
-                <Input
-                id="location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                placeholder="e.g., Koramangala, Bangalore"
-                />
-            </div>
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                        <Label htmlFor="city">Your City</Label>
+                        <Input
+                        id="city"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        placeholder="e.g., Bangalore"
+                        />
+                    </div>
+                     <div className="space-y-2">
+                        <Label htmlFor="locality">Target Locality</Label>
+                        <Input
+                        id="locality"
+                        value={locality}
+                        onChange={(e) => setLocality(e.target.value)}
+                        placeholder="e.g., Koramangala"
+                        />
+                    </div>
+                </div>
 
-            <Button onClick={handleFind} disabled={isLoading || !location} className="w-full">
+            <Button onClick={handleFind} disabled={isLoading || !locality} className="w-full">
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {isLoading ? 'Personalizing...' : <> <Search className='mr-2' /> Find Stores </>}
+                {isLoading ? 'Calculating...' : <> <Search className='mr-2' /> Estimate Reach </>}
             </Button>
 
             {results && (
                 <Alert>
-                    <AlertTitle className='font-headline'>Personalized Results for {location}</AlertTitle>
-                    <AlertDescription className="whitespace-pre-wrap">
-                        {results}
+                    <AlertTitle className='font-headline'>Estimated Reach in {locality}</AlertTitle>
+                    <AlertDescription>
+                        <div className='flex justify-around mt-4'>
+                            <div className='text-center'>
+                                 <p className='text-muted-foreground text-sm'>Partner Shops</p>
+                                 <p className='text-2xl font-bold text-primary'>{results.shops}</p>
+                            </div>
+                            <div className='text-center'>
+                                 <p className='text-muted-foreground text-sm'>Monthly Impressions</p>
+                                 <p className='text-2xl font-bold text-primary'>{results.impressions.toLocaleString('en-IN')}+</p>
+                            </div>
+                        </div>
+                         <p className='text-xs text-muted-foreground mt-4 text-center'>(Estimates for a 5km radius)</p>
                     </AlertDescription>
                 </Alert>
             )}

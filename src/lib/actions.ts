@@ -10,7 +10,7 @@ export async function personalizeExplorerAction(input: PersonalizeKiranaStoreExp
     return { success: true, data: result };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'Failed to personalize results.' };
+    return { success: false, error: 'Failed to calculate reach. Please try another locality.' };
   }
 }
 

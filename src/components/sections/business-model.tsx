@@ -1,29 +1,33 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { Check } from 'lucide-react';
 
-const packages = [
-  {
-    name: 'Starter',
-    price: '₹5,000',
-    description: 'Perfect for new brands testing the waters.',
-    features: ['10 Stores', 'Up to 50,000 Impressions', 'Basic Analytics'],
-    isFeatured: false,
-  },
-  {
-    name: 'Growth',
-    price: '₹25,000',
-    description: 'Ideal for growing brands aiming for regional impact.',
-    features: ['50 Stores', 'Up to 300,000 Impressions', 'Advanced Analytics', 'A/B Testing'],
-    isFeatured: true,
-  },
-  {
-    name: 'Scale',
-    price: 'Contact Us',
-    description: 'For established brands seeking nationwide reach.',
-    features: ['500+ Stores', 'Unlimited Impressions', 'Dedicated Support', 'Custom Integrations'],
-    isFeatured: false,
-  },
+const plans = [
+  { screens: 1, plays: '~144', views: '~4,320', fee: '₹799' },
+  { screens: 2, plays: '~288', views: '~8,640', fee: '₹1499' },
+  { screens: 3, plays: '~432', views: '~12,960', fee: '₹2399' },
+];
+
+const features = [
+  'Targeted Reach: ~200 daily shoppers per store (~6,000+ monthly views per screen).',
+  'Affordable Plans: Starting at just ₹799 per month, scale across multiple screens.',
+  'Extra Advantage: Option to distribute free product samples in stores for direct consumer trials.',
+  'High Recall, High Impact - 12 hours of daily screen time with repeated exposure to increase stronger brand memory.',
 ];
 
 export default function BusinessModel() {
@@ -31,42 +35,63 @@ export default function BusinessModel() {
     <section id="business-model" className="bg-background">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-          Simple, Transparent, and Effective
+          Brand Spotlight Plans
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Our model is designed to deliver value at every step. Choose the plan that fits your ambition.
+          10-sec ads, played every 2 minutes. Best for: Local shops, trial
+          campaigns, single-product promos.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {packages.map((pkg) => (
-            <Card
-              key={pkg.name}
-              className={`flex flex-col ${pkg.isFeatured ? 'border-2 border-primary shadow-2xl' : ''}`}
-            >
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">{pkg.name}</CardTitle>
-                <CardDescription>{pkg.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 space-y-6">
-                <p className="font-sans text-4xl font-bold">{pkg.price}
-                    {pkg.price.startsWith('₹') && <span className="text-sm font-normal text-muted-foreground">/mo</span>}
-                </p>
-                <ul className="space-y-3 text-left">
-                  {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-green-500" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full" variant={pkg.isFeatured ? 'default' : 'outline'}>
-                  {pkg.name === 'Scale' ? 'Contact Us' : 'Get Started'}
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+        <Card className="mt-12 w-full max-w-4xl mx-auto">
+          <CardHeader className="text-center">
+            <div className="font-sans text-xl font-semibold text-primary">
+              Starts at just{' '}
+              <span className="text-3xl font-bold">₹799</span> per shop, per
+              month.
+            </div>
+            <p className="text-sm text-muted-foreground">
+              That’s only ₹0.13 per ad impression.
+            </p>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="text-center">Screens</TableHead>
+                  <TableHead className="text-center">
+                    Frequency (per screen/day)
+                  </TableHead>
+                  <TableHead className="text-center">Monthly Views</TableHead>
+                  <TableHead className="text-center">Monthly Fee</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {plans.map((plan) => (
+                  <TableRow key={plan.screens}>
+                    <TableCell className="text-center font-medium">
+                      {plan.screens}
+                    </TableCell>
+                    <TableCell className="text-center">{plan.plays}</TableCell>
+                    <TableCell className="text-center">{plan.views}</TableCell>
+                    <TableCell className="text-center font-bold text-primary">
+                      {plan.fee}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+
+        <div className="mt-16 text-left max-w-4xl mx-auto">
+           <ul className="space-y-4">
+              {features.map((feature) => (
+                <li key={feature} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span className="text-muted-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
         </div>
       </div>
     </section>
