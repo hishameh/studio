@@ -1,137 +1,91 @@
 'use client';
+import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Building, HeartHandshake, Package, ShoppingCart, TrendingUp } from 'lucide-react';
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Rocket, Smile, TrendingUp, Handshake, Target, ShoppingBag, Store } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { cn } from '@/lib/utils';
-import { Button } from '../ui/button';
-
-type TabData = {
-  value: 'brands' | 'stores' | 'consumers';
-  label: string;
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  benefit: {
-    text: string;
-    stat: string;
-  };
-  imageId: string;
-};
-
-const tabsData: TabData[] = [
+const slides = [
   {
-    value: 'brands',
-    label: 'For Brands',
-    icon: Rocket,
-    title: 'Hyper-Local Visibility, Unmatched Impact.',
-    description: 'Struggling to get noticed on crowded shelves? Alive places your brand directly in front of relevant customers at their local stores, driving trial and boosting sales with hyper-targeted digital ads at the point of purchase.',
-    benefit: { text: 'Increased trial rates by up to', stat: '3x' },
-    imageId: 'how-it-works-brands',
+    for: 'Kirana Stores',
+    icon: Building,
+    before: {
+      title: 'Before Alive',
+      description: 'Unused shelf space, unrealized income.'
+    },
+    after: {
+      title: 'With Alive',
+      description: 'A new revenue stream from dynamic ads.'
+    },
   },
   {
-    value: 'stores',
-    label: 'For Kirana Stores',
-    icon: Store,
-    title: 'Unlock New Revenue From Your Shelves.',
-    description: 'Turn your underutilized shelf space into a new, consistent revenue stream. By partnering with Alive, your store becomes a modern media channel, earning income by hosting brand advertisements that also attract more customers.',
-    benefit: { text: 'Potential new monthly revenue stream of', stat: '₹5,000+' },
-    imageId: 'how-it-works-stores',
+    for: 'Consumers',
+    icon: ShoppingCart,
+    before: {
+        title: 'Before Alive',
+        description: 'Overlooked products and missed deals.'
+      },
+      after: {
+        title: 'With Alive',
+        description: 'Discover new products and save money.'
+      },
   },
   {
-    value: 'consumers',
-    label: 'For Consumers',
-    icon: ShoppingBag,
-    title: 'Discover Great Products and Save More.',
-    description: 'Tired of missing out on great deals from new and favorite brands? Alive helps you discover exciting new products and unlock exclusive discounts on your everyday shopping, making every kirana visit a rewarding experience.',
-    benefit: { text: 'Average monthly savings of', stat: '₹500' },
-    imageId: 'how-it-works-consumers',
+    for: 'Brands',
+    icon: Package,
+    before: {
+        title: 'Before Alive',
+        description: 'Struggling for visibility at the local level.'
+      },
+      after: {
+        title: 'With Alive',
+        description: 'Hyper-targeted ads that drive trial and sales.'
+      },
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
-};
-
 export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState<TabData['value']>('brands');
-
-  const currentTabData = tabsData.find((tab) => tab.value === activeTab);
-  const currentImage = PlaceHolderImages.find((p) => p.id === currentTabData?.imageId);
-  
   return (
     <section id="how-it-works" className="bg-secondary">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-          An Ecosystem for Growth
+          A Tangible Transformation
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Alive creates a win-win-win situation, empowering everyone in the retail journey.
+          See the difference Alive makes at the point of purchase.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="flex flex-col gap-4">
-                {tabsData.map((tab) => (
-                    <Button 
-                        key={tab.value}
-                        variant={activeTab === tab.value ? 'default' : 'outline'}
-                        size="lg"
-                        className="justify-start h-auto text-left py-4"
-                        onClick={() => setActiveTab(tab.value)}
-                    >
-                        <tab.icon className="mr-4 h-6 w-6" />
-                        <span className="font-headline text-lg">{tab.label}</span>
-                    </Button>
-                ))}
-
-                {currentTabData && (
-                     <motion.div
-                        key={activeTab}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="mt-4 text-left p-6 bg-background rounded-lg"
-                    >
-                        <h3 className="font-headline text-2xl font-bold text-primary">{currentTabData.title}</h3>
-                        <p className="mt-2 text-muted-foreground">{currentTabData.description}</p>
-                        <div className="mt-4">
-                            <p className="text-4xl font-bold text-primary">{currentTabData.benefit.stat}</p>
-                            <p className="text-lg text-muted-foreground">{currentTabData.benefit.text}</p>
+        <Carousel opts={{ loop: true }} className="mt-12 w-full">
+          <CarouselContent>
+            {slides.map((slide, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2">
+                      <div className="space-y-4 text-center">
+                        <h3 className="font-headline text-xl font-semibold text-muted-foreground">{slide.before.title}</h3>
+                        <div className="flex justify-center">
+                           <slide.icon className="h-16 w-16 text-muted-foreground/50"/>
                         </div>
-                    </motion.div>
-                )}
-            </div>
-             <motion.div 
-                key={activeTab + '-image'}
-                className="relative aspect-square w-full"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-            >
-                {currentImage && (
-                    <Image 
-                        src={currentImage.imageUrl}
-                        alt={currentImage.description}
-                        data-ai-hint={currentImage.imageHint}
-                        fill
-                        className="object-cover rounded-xl shadow-2xl"
-                    />
-                )}
-            </motion.div>
-        </div>
+                        <p>{slide.before.description}</p>
+                      </div>
+                      <div className="space-y-4 text-center">
+                        <h3 className="font-headline text-xl font-semibold text-primary">{slide.after.title}</h3>
+                         <div className="flex justify-center">
+                            <div className="relative">
+                               <slide.icon className="h-16 w-16 text-primary" />
+                               <TrendingUp className="absolute -bottom-2 -right-2 h-8 w-8 text-green-500 bg-background rounded-full p-1" />
+                            </div>
+                         </div>
+                        <p className="font-semibold">{slide.after.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="ml-12 hidden sm:flex" />
+          <CarouselNext className="mr-12 hidden sm:flex" />
+        </Carousel>
       </div>
     </section>
   );
