@@ -1,8 +1,11 @@
 import AliveMeter from "../interactive/alive-meter";
-import AliveTV from "../interactive/alive-tv";
 import DataPulse from "../interactive/data-pulse";
 import ImpactCalculator from "../interactive/impact-calculator";
 import KiranaStoreExplorer from "../interactive/kirana-store-explorer";
+import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+
+const adImage = PlaceHolderImages.find((p) => p.id === 'alive-ad-in-store');
 
 export default function Features() {
   return (
@@ -17,7 +20,9 @@ export default function Features() {
             </p>
         </div>
         
-        <AliveTV />
+        {adImage && <div className="relative aspect-video max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+          <Image src={adImage.imageUrl} alt={adImage.description} data-ai-hint={adImage.imageHint} fill className="object-cover"/>
+        </div>}
         <KiranaStoreExplorer />
         <ImpactCalculator />
         <DataPulse />

@@ -6,7 +6,7 @@ import { Building, Eye, Sparkles } from 'lucide-react';
 const pulseData = [
   {
     icon: Building,
-    end: 1250,
+    end: 10,
     label: 'Stores Onboarded',
   },
   {

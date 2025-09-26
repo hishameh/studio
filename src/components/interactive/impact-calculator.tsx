@@ -8,16 +8,17 @@ import { Slider } from '@/components/ui/slider';
 import { Badge } from '../ui/badge';
 
 const formatNumber = (num: number) => Math.round(num).toLocaleString('en-IN');
+const IMPRESSIONS_PER_SHOP_PER_MONTH = 6000;
 
 export default function ImpactCalculator() {
   const [userType, setUserType] = useState<'brand' | 'store'>('brand');
-  const [budget, setBudget] = useState(25000);
+  const [shops, setShops] = useState(5); // Now represents number of shops for a brand
   const [shelfSpace, setShelfSpace] = useState(5);
 
   const brandOutputs = {
-    impressions: budget * 15,
-    reach: budget * 2,
-    salesUplift: budget * 0.03,
+    impressions: shops * IMPRESSIONS_PER_SHOP_PER_MONTH,
+    reach: shops * IMPRESSIONS_PER_SHOP_PER_MONTH * 0.3, // Example reach calculation
+    salesUplift: shops * 0.5, // Example uplift calculation
   };
 
   const storeOutputs = {
@@ -54,16 +55,16 @@ export default function ImpactCalculator() {
 
             {userType === 'brand' ? (
               <div className="space-y-4">
-                <Label htmlFor="budget" className="text-lg font-semibold">
-                  Monthly Ad Budget: ₹{formatNumber(budget)}
+                <Label htmlFor="shops" className="text-lg font-semibold">
+                  Number of Shops: {shops}
                 </Label>
                 <Slider
-                  id="budget"
-                  min={5000}
-                  max={100000}
-                  step={1000}
-                  value={[budget]}
-                  onValueChange={(value) => setBudget(value[0])}
+                  id="shops"
+                  min={1}
+                  max={50}
+                  step={1}
+                  value={[shops]}
+                  onValueChange={(value) => setShops(value[0])}
                 />
               </div>
             ) : (

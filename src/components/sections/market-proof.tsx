@@ -24,9 +24,9 @@ const comparisonData = [
   },
 ];
 
-const cpaData = [
-    { name: 'Alive', value: 0.50 },
-    { name: 'Traditional', value: 2.00 }
+const cpiData = [
+    { name: 'Alive', value: 0.13 },
+    { name: 'Traditional', value: 0.50 }
 ];
 
 const salesUpliftData = [
@@ -46,7 +46,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div className="rounded-lg border bg-popover p-2 text-popover-foreground shadow-sm">
-        <p className="font-bold text-popover-foreground">{`${payload[0].name}: ₹${payload[0].value.toFixed(2)}`}</p>
+        <p className="font-bold text-white">{`${payload[0].name}: ₹${payload[0].value.toFixed(2)}`}</p>
       </div>
     );
   }
@@ -95,7 +95,7 @@ export default function MarketProof() {
                                         color: 'hsl(var(--popover-foreground))'
                                     }}
                                 />
-                                <Bar dataKey="digital" name="Alive" radius={[0, 4, 4, 0]} fill={COLORS.digital} isAnimationActive={false} />
+                                <Bar dataKey="digital" name="Alive" radius={[0, 4, 4, 0]} fill={COLORS.digital} />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -103,24 +103,23 @@ export default function MarketProof() {
             </Card>
              <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline">Cost Per Acquisition</CardTitle>
-                    <CardDescription>Average cost for a new customer.</CardDescription>
+                    <CardTitle className="font-headline">Cost Per Impression</CardTitle>
+                    <CardDescription>Average cost for an ad view.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <div className="h-[200px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
                                 <Pie
-                                    data={cpaData}
+                                    data={cpiData}
                                     dataKey="value"
                                     nameKey="name"
                                     cx="50%"
                                     cy="50%"
                                     outerRadius={60}
                                     label={(props) => `₹${props.value.toFixed(2)}`}
-                                    isAnimationActive={false}
                                 >
-                                    {cpaData.map((entry, index) => (
+                                    {cpiData.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? COLORS.digital : COLORS.traditional} stroke={index === 0 ? COLORS.digital : COLORS.traditional} />
                                     ))}
                                 </Pie>
@@ -162,7 +161,7 @@ export default function MarketProof() {
                                     <stop offset="95%" stopColor={COLORS.digital} stopOpacity={0}/>
                                     </linearGradient>
                                 </defs>
-                                <Area type="monotone" dataKey="uplift" stroke={COLORS.digital} fill="url(#colorUplift)" strokeWidth={2} isAnimationActive={false} />
+                                <Area type="monotone" dataKey="uplift" stroke={COLORS.digital} fill="url(#colorUplift)" strokeWidth={2} />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -195,7 +194,7 @@ export default function MarketProof() {
                                     <stop offset="95%" stopColor={COLORS.traditional} stopOpacity={0}/>
                                     </linearGradient>
                                 </defs>
-                                <Area type="monotone" dataKey="recall" stroke={COLORS.traditional} fill="url(#colorDecay)" strokeWidth={2} isAnimationActive={false} />
+                                <Area type="monotone" dataKey="recall" stroke={COLORS.traditional} fill="url(#colorDecay)" strokeWidth={2} />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>

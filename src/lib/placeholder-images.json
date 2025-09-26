@@ -7,6 +7,24 @@
       "imageHint": "indian kirana store"
     },
     {
+      "id": "how-it-works-brands",
+      "description": "A close-up shot of a product on a shelf with an 'Alive' digital ad next to it.",
+      "imageUrl": "https://images.unsplash.com/photo-1635520183475-4b10019168c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwcm9kdWN0JTIwc2hlbGYlMjBhZHxlbnwwfHx8fDE3NTg4ODg1Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "product shelf ad"
+    },
+    {
+      "id": "how-it-works-stores",
+      "description": "A happy Kirana store owner standing proudly in his shop, which has modern 'Alive' screens.",
+      "imageUrl": "https://images.unsplash.com/photo-1753351055056-d612233d8036?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoYXBweSUyMHN0b3JlJTIwb3duZXJ8ZW58MHx8fHwxNzU4ODg4NTc4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy store owner"
+    },
+    {
+      "id": "how-it-works-consumers",
+      "description": "A customer in a Kirana store, smiling as they discover a new product or deal on an 'Alive' screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1606483956061-46a898dce538?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMGN1c3RvbWVyJTIwZGVhbHxlbnwwfHx8fDE3NTg4ODg1Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy customer deal"
+    },
+    {
       "id": "deal-scanner-shelf",
       "description": "A kirana shelf for the deal scanner simulation",
       "imageUrl": "https://images.unsplash.com/photo-1734772337649-79615ba2f176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyZXRhaWwlMjBzaGVsZnxlbnwwfHx8fDE3NTg4MDY1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -50,7 +68,7 @@
     },
     {
       "id": "kirana-explorer-bg",
-      "description": "Busy Indian Kirana store shelf with various products",
+      "description": "Authentic Indian Kirana store shelf with various products",
       "imageUrl": "https://images.unsplash.com/photo-1601019255059-87a3e3906342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBncm9jZXJ5JTIwc3RvcmV8ZW58MHx8fHwxNzU5NjgyNjYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indian grocery store"
     },
@@ -85,22 +103,10 @@
       "imageHint": "shelf products"
     },
     {
-      "id": "alive-tv-bg",
-      "description": "Background image of a kirana store for the Alive TV component",
-      "imageUrl": "https://images.unsplash.com/photo-1579112946322-976a595a75b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBzdG9yZXxlbnwwfHx8fDE3NTk1ODYxNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian store"
-    },
-    {
-      "id": "alive-tv-ad-1",
-      "description": "Advertisement for a beverage",
-      "imageUrl": "https://images.unsplash.com/photo-1556881123-450a304a9199?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZXZlcmFnZSUyMGFkfGVufDB8fHx8fDE3NTk1ODYzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "beverage ad"
-    },
-    {
-      "id": "alive-tv-ad-2",
-      "description": "Advertisement for chips",
-      "imageUrl": "https://images.unsplash.com/photo-1621376332155-520b2c1a8a2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlwcyUyMGFkfGVufDB8fHx8fDE3NTk1ODYzOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chips ad"
+      "id": "alive-ad-in-store",
+      "description": "An image of ads running on a digital screen inside a typical Indian kirana store.",
+      "imageUrl": "https://images.unsplash.com/photo-1575475845137-36cea99e9751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhZCUyMHNjcmVlbiUyMHN0b3JlfGVufDB8fHx8MTc1ODg4ODU3OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ad screen store"
     }
   ]
 }

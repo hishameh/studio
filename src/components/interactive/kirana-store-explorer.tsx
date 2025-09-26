@@ -3,21 +3,33 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Loader2, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { personalizeExplorerAction } from '@/lib/actions';
-import { Textarea } from '../ui/textarea';
 import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
-import { Badge } from '../ui/badge';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg');
 
+const locations: Record<string, string[]> = {
+    'Bangalore': ['Koramangala', 'Indiranagar', 'Jayanagar', 'Whitefield'],
+    'Mumbai': ['Bandra', 'Andheri', 'Dadar', 'Colaba'],
+    'Delhi': ['Connaught Place', 'Hauz Khas', 'Karol Bagh', 'Chandni Chowk'],
+};
+
+const cities = Object.keys(locations);
+
 export default function KiranaStoreExplorer() {
-  const [city, setCity] = useState('Bangalore');
-  const [locality, setLocality] = useState('Koramangala');
+  const [city, setCity] = useState(cities[0]);
+  const [locality, setLocality] = useState(locations[cities[0]][0]);
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<{impressions: number, shops: number} | null>(null);
   const [error, setError] = useState('');
@@ -38,6 +50,17 @@ export default function KiranaStoreExplorer() {
     setIsLoading(false);
   };
 
+  const handleCityChange = (newCity: string) => {
+    setCity(newCity);
+    setLocality(locations[newCity][0]);
+    setResults(null);
+  }
+
+  const handleLocalityChange = (newLocality: string) => {
+    setLocality(newLocality);
+    setResults(null);
+  }
+
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="relative aspect-[4/3] w-full">
@@ -53,21 +76,25 @@ export default function KiranaStoreExplorer() {
                 <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                         <Label htmlFor="city">Your City</Label>
-                        <Input
-                        id="city"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        placeholder="e.g., Bangalore"
-                        />
+                        <Select value={city} onValueChange={handleCityChange}>
+                            <SelectTrigger id="city">
+                                <SelectValue placeholder="Select a city" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {cities.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
                     </div>
                      <div className="space-y-2">
                         <Label htmlFor="locality">Target Locality</Label>
-                        <Input
-                        id="locality"
-                        value={locality}
-                        onChange={(e) => setLocality(e.target.value)}
-                        placeholder="e.g., Koramangala"
-                        />
+                        <Select value={locality} onValueChange={handleLocalityChange}>
+                            <SelectTrigger id="locality">
+                                <SelectValue placeholder="Select a locality" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {locations[city].map(l => <SelectItem key={l} value={l}>{l}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
 
