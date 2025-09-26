@@ -11,21 +11,28 @@ const heroContent = {
     title: 'Seen. Remembered. Bought.',
     subtitle: 'Alive connects brands, kirana stores, and consumers—right where purchase decisions happen.',
     image: PlaceHolderImages.find((p) => p.id === 'how-it-works-brands'),
+    cta: 'Join as a Brand'
   },
   stores: {
     title: 'Earn More From Your Shelves.',
     subtitle: 'Turn your store into a media channel and create a new revenue stream with zero investment.',
     image: PlaceHolderImages.find((p) => p.id === 'how-it-works-stores'),
+    cta: 'Partner as a Kirana'
   },
   consumers: {
     title: 'Discover Your Next Favorite.',
     subtitle: 'Find exciting new products and unmissable deals every time you visit your local kirana store.',
     image: PlaceHolderImages.find((p) => p.id === 'how-it-works-consumers'),
+    cta: 'Get Deals as a Consumer'
   },
 };
 
+type HeroProps = {
+  onGetStartedClick: (title: string) => void;
+};
 
-export default function Hero() {
+
+export default function Hero({ onGetStartedClick }: HeroProps) {
     const [activeTab, setActiveTab] = useState<'brands' | 'stores' | 'consumers'>('brands');
     const currentContent = heroContent[activeTab];
 

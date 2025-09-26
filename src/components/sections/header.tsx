@@ -10,7 +10,12 @@ const navLinks = [
   { href: '#testimonials', label: 'Testimonials', icon: Users },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  onGetStartedClick: () => void;
+};
+
+
+export default function Header({ onGetStartedClick }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -31,7 +36,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button className="hidden md:flex">
+          <Button className="hidden md:flex" onClick={onGetStartedClick}>
             Get Started
           </Button>
           <Sheet>
@@ -58,7 +63,7 @@ export default function Header() {
                     </a>
                   ))}
                 </nav>
-                 <Button variant="default">
+                 <Button variant="default" onClick={onGetStartedClick}>
                     Get Started
                 </Button>
               </div>

@@ -15,6 +15,7 @@ import { Badge } from '../ui/badge';
 
 const formatNumber = (num: number) => Math.round(num).toLocaleString('en-IN');
 const IMPRESSIONS_PER_SHOP_PER_MONTH = 6000;
+const REACH_PER_SHOP = 6000;
 const COST_PER_SHOP_PER_MONTH = 799;
 
 export default function ImpactCalculator() {
@@ -25,14 +26,14 @@ export default function ImpactCalculator() {
 
   useEffect(() => {
     if (userType === 'brand') {
-      const अफ्फोर्डेबल_शॉप्स = Math.floor(budget / COST_PER_SHOP_PER_MONTH);
-      setShops(Math.max(1, अफ्फोर्डेबल_शॉप्स));
+      const affordableShops = Math.floor(budget / COST_PER_SHOP_PER_MONTH);
+      setShops(Math.max(1, affordableShops));
     }
   }, [budget, userType]);
 
   const brandOutputs = {
     impressions: shops * IMPRESSIONS_PER_SHOP_PER_MONTH,
-    reach: shops * IMPRESSIONS_PER_SHOP_PER_MONTH * 0.3, // Example reach calculation
+    reach: shops * REACH_PER_SHOP,
     salesUplift: shops * 0.5, // Example uplift calculation
   };
 

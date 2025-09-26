@@ -55,7 +55,11 @@ const plans = [
   },
 ];
 
-export default function BusinessModel() {
+type BusinessModelProps = {
+  onGetStartedClick: () => void;
+};
+
+export default function BusinessModel({ onGetStartedClick }: BusinessModelProps) {
   return (
     <section id="business-model" className="bg-background">
       <div className="container mx-auto px-4 text-center">
@@ -97,7 +101,7 @@ export default function BusinessModel() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" variant={plan.name === 'Growth' ? 'default' : 'outline'}>
+                <Button className="w-full" variant={plan.name === 'Growth' ? 'default' : 'outline'} onClick={onGetStartedClick}>
                   {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

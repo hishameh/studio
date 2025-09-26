@@ -20,14 +20,14 @@ import {
 const bgImage = PlaceHolderImages.find(p => p.id === 'kirana-explorer-bg-2');
 
 const locations: Record<string, string[]> = {
-    'Mangalore': ['Hampankatta', 'Kadri', 'Lalbagh', 'Bejai', 'Urwa', 'Kankanady', 'Balmatta'],
-    'Bangalore': [],
-    'Mumbai': [],
-    'Delhi': [],
-    'Chennai': [],
-    'Kolkata': [],
-    'Hyderabad': [],
-    'Pune': [],
+  'Mangalore': ['Hampankatta', 'Kadri', 'Lalbagh', 'Bejai', 'Urwa', 'Kankanady', 'Balmatta'],
+  'Bangalore': ['Koramangala', 'Indiranagar', 'Jayanagar', 'Whitefield', 'HSR Layout', 'Electronic City'],
+  'Mumbai': ['Andheri', 'Bandra', 'Dadar', 'Juhu', 'Malad', 'South Mumbai'],
+  'Delhi': ['Connaught Place', 'Karol Bagh', 'Hauz Khas', 'Saket', 'Dwarka', 'Noida'],
+  'Chennai': ['T. Nagar', 'Anna Nagar', 'Adyar', 'Velachery', 'OMR'],
+  'Kolkata': ['Park Street', 'Salt Lake', 'New Town', 'Howrah', 'Ballygunge'],
+  'Hyderabad': ['Banjara Hills', 'Jubilee Hills', 'Gachibowli', 'Hitech City', 'Secunderabad'],
+  'Pune': ['Koregaon Park', 'Viman Nagar', 'Deccan', 'Hinjewadi', 'Kothrud'],
 };
 
 const cities = Object.keys(locations);
@@ -57,7 +57,7 @@ export default function KiranaStoreExplorer() {
 
   const handleCityChange = (newCity: string) => {
     setCity(newCity);
-    if(locations[newCity].length > 0) {
+    if(locations[newCity] && locations[newCity].length > 0) {
       setLocality(locations[newCity][0]);
     } else {
       setLocality('');
@@ -91,8 +91,8 @@ export default function KiranaStoreExplorer() {
                             </SelectTrigger>
                             <SelectContent>
                                 {cities.map(c => 
-                                  <SelectItem key={c} value={c} disabled={locations[c].length === 0}>
-                                    {c} {locations[c].length > 0 ? '(Live)' : '(Coming Soon)'}
+                                  <SelectItem key={c} value={c}>
+                                    {c} {c === 'Mangalore' ? '(Live)' : ''}
                                   </SelectItem>
                                 )}
                             </SelectContent>
@@ -100,12 +100,12 @@ export default function KiranaStoreExplorer() {
                     </div>
                      <div className="space-y-2">
                         <Label htmlFor="locality">Target Locality</Label>
-                        <Select value={locality} onValueChange={handleLocalityChange} disabled={!city || locations[city].length === 0}>
+                        <Select value={locality} onValueChange={handleLocalityChange} disabled={!city || !locations[city] || locations[city].length === 0}>
                             <SelectTrigger id="locality">
                                 <SelectValue placeholder="Select a locality" />
                             </SelectTrigger>
                             <SelectContent>
-                                {city && locations[city].map(l => <SelectItem key={l} value={l}>{l}</SelectItem>)}
+                                {city && locations[city] && locations[city].map(l => <SelectItem key={l} value={l}>{l}</SelectItem>)}
                             </SelectContent>
                         </Select>
                     </div>

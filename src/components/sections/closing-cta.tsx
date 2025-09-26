@@ -1,6 +1,10 @@
 import { Button } from '@/components/ui/button';
 
-export default function ClosingCta() {
+type ClosingCtaProps = {
+  onCtaClick: (title: string) => void;
+};
+
+export default function ClosingCta({ onCtaClick }: ClosingCtaProps) {
   return (
     <section id="closing-cta" className="bg-secondary">
       <div className="container mx-auto px-4 text-center">
@@ -11,9 +15,9 @@ export default function ClosingCta() {
           Ready to join the retail revolution? Choose your path and let's get started.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button size="lg">Join as a Brand</Button>
-          <Button size="lg" variant="outline">Partner as a Kirana</Button>
-          <Button size="lg" variant="ghost">Get Deals as a Consumer</Button>
+          <Button size="lg" onClick={() => onCtaClick('Join as a Brand')}>Join as a Brand</Button>
+          <Button size="lg" variant="outline" onClick={() => onCtaClick('Partner as a Kirana')}>Partner as a Kirana</Button>
+          <Button size="lg" variant="ghost" onClick={() => onCtaClick('Get Deals as a Consumer')}>Get Deals as a Consumer</Button>
         </div>
       </div>
     </section>
