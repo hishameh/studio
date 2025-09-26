@@ -35,10 +35,10 @@ export default function Testimonials() {
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
           Loved by Everyone in the Ecosystem
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           Hear from the people who are part of the Alive journey.
         </p>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {testimonials.map((testimonial) => (
              <TestimonialCard
                 key={testimonial.id}

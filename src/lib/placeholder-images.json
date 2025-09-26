@@ -3,8 +3,8 @@
     {
       "id": "hero-kirana-store",
       "description": "A bustling and vibrant Kirana store with customers, conveying a sense of activity",
-      "imageUrl": "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXN5JTIwc3RvcmV8ZW58MHx8fHwxNzU4ODk5MjI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "busy store"
+      "imageUrl": "https://images.unsplash.com/photo-1629437196141-80f08969b4b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBraXJhbmElMjBzdG9yZXxlbnwwfHx8fDE3NTk1ODQxODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian kirana store"
     },
     {
       "id": "deal-scanner-shelf",
@@ -83,6 +83,24 @@
       "description": "Close up of products on shelf",
       "imageUrl": "https://images.unsplash.com/photo-1607103058066-0cc3e67f97be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaGVsZiUyMHByb2R1Y3RzfGVufDB8fHx8fDE3NTg4MTAwOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shelf products"
+    },
+    {
+      "id": "alive-tv-bg",
+      "description": "Background image of a kirana store for the Alive TV component",
+      "imageUrl": "https://images.unsplash.com/photo-1579112946322-976a595a75b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBzdG9yZXxlbnwwfHx8fDE3NTk1ODYxNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian store"
+    },
+    {
+      "id": "alive-tv-ad-1",
+      "description": "Advertisement for a beverage",
+      "imageUrl": "https://images.unsplash.com/photo-1556881123-450a304a9199?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZXZlcmFnZSUyMGFkfGVufDB8fHx8fDE3NTk1ODYzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beverage ad"
+    },
+    {
+      "id": "alive-tv-ad-2",
+      "description": "Advertisement for chips",
+      "imageUrl": "https://images.unsplash.com/photo-1621376332155-520b2c1a8a2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlwcyUyMGFkfGVufDB8fHx8fDE3NTk1ODYzOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chips ad"
     }
   ]
 }

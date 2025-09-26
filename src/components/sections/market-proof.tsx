@@ -50,7 +50,7 @@ export default function MarketProof() {
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             The Digital Advantage in Retail
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             In-store digital media isn't just new, it's quantifiably better. We turn passive shoppers into active buyers.
           </p>
         </div>
@@ -77,8 +77,9 @@ export default function MarketProof() {
                                     cursor={false}
                                     animationDuration={300}
                                     contentStyle={{
-                                        background: 'hsl(var(--background))',
-                                        borderColor: 'hsl(var(--border))'
+                                        background: 'hsl(var(--popover))',
+                                        borderColor: 'hsl(var(--border))',
+                                        color: 'hsl(var(--popover-foreground))'
                                     }}
                                 />
                                 <Bar dataKey="digital" name="Alive" radius={[0, 4, 4, 0]} fill={COLORS.digital} isAnimationActive={true} animationDuration={900} />
@@ -115,8 +116,9 @@ export default function MarketProof() {
                                     cursor={false}
                                     animationDuration={300}
                                     contentStyle={{
-                                        background: 'hsl(var(--background))',
-                                        borderColor: 'hsl(var(--border))'
+                                        background: 'hsl(var(--popover))',
+                                        borderColor: 'hsl(var(--border))',
+                                        color: 'hsl(var(--popover-foreground))'
                                     }}
                                 />
                                 <Legend wrapperStyle={{ fontSize: '0.8rem' }} iconSize={10} />
@@ -141,8 +143,9 @@ export default function MarketProof() {
                                     cursor={false}
                                     animationDuration={300}
                                     contentStyle={{
-                                        background: 'hsl(var(--background))',
-                                        borderColor: 'hsl(var(--border))'
+                                        background: 'hsl(var(--popover))',
+                                        borderColor: 'hsl(var(--border))',
+                                        color: 'hsl(var(--popover-foreground))'
                                     }}
                                 />
                                 <defs>
@@ -173,8 +176,9 @@ export default function MarketProof() {
                                     cursor={false}
                                     animationDuration={300}
                                     contentStyle={{
-                                        background: 'hsl(var(--background))',
-                                        borderColor: 'hsl(var(--border))'
+                                        background: 'hsl(var(--popover))',
+                                        borderColor: 'hsl(var(--border))',
+                                        color: 'hsl(var(--popover-foreground))'
                                     }}
                                 />
                                 <defs>

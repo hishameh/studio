@@ -65,24 +65,24 @@ export default function OurStory() {
       <motion.div style={{ y }} ref={ref}>
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Alive?</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           We saw disconnected players in a single ecosystem. So we built the bridge.
         </p>
-        <div className="relative mt-16 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-0">
+        <div className="relative mt-20 flex flex-col items-center justify-center gap-12 md:flex-row md:gap-0">
           {storyElements.map((item, index) => (
             <>
               <StoryElement item={item} index={index} />
               {index < storyElements.length - 1 && (
                 <motion.div initial={{opacity: 0, scale: 0}} animate={{opacity: 1, scale: 1}} transition={{delay: 0.5 * (index + 2)}}>
-                    <Plus className="h-8 w-8 text-primary md:mx-8" />
+                    <Plus className="h-8 w-8 text-primary md:mx-12" />
                 </motion.div>
               )}
             </>
           ))}
         </div>
-        <div className="mt-12 flex flex-col items-center">
+        <div className="mt-20 flex flex-col items-center">
             <ArrowRight className="h-10 w-10 text-primary animate-bounce-horizontal" />
-            <div className="mt-4 rounded-lg bg-primary p-6 text-primary-foreground shadow-xl">
+            <div className="mt-6 rounded-lg bg-primary p-8 text-primary-foreground shadow-xl">
                 <h3 className="font-headline text-2xl font-bold">Alive Connects Them All.</h3>
                 <p className="mt-2">Creating a thriving ecosystem where brands get seen, stores earn more, and consumers discover value.</p>
             </div>

@@ -21,7 +21,7 @@ export default function Team() {
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
           The People Behind the Pulse
         </h2>
-        <div className="mt-12 flex flex-col items-center justify-center gap-12 md:flex-row md:gap-20">
+        <div className="mt-16 flex flex-col items-center justify-center gap-12 md:flex-row md:gap-24">
           {founders.map((founder) => (
             <div key={founder.name} className="flex flex-col items-center gap-4">
               {founder.image && (
